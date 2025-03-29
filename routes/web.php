@@ -32,20 +32,17 @@ Route::get('/washer-landing', function () {
 
 
 // routes for the client pages 
-
 // dashboard
 
 Route::get('/client/dashboard', [dashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');   
 
 // booking
-
 Route::get("/client/booking" , [BookingController::class , "index"])->middleware(['auth', 'verified'])->name('BookingPage') ;
 Route::post("/client/booking" , [BookingController::class , "store"])->middleware(['auth', 'verified'])->name('BookingPage.store') ;
 Route::delete("/client/booking/{id}" , [BookingController::class , "destroy"])->middleware(['auth', 'verified'])->name('BookingPage.destroy') ;
 ;
 
 // mange car  routes
-
 Route::get("/client/MangeCar" , [CarController::class , "create"])->middleware(['auth', 'verified'])->name('MangeCar') ;
 Route::post("/client/MangeCar" , [CarController::class , "store"])->middleware(['auth', 'verified'])->name('MangeCar.store') ;
 Route::get('/MangeCar/{car}/edit', [CarController::class, 'edit'])->name('MangeCar.edit');
@@ -56,25 +53,15 @@ Route::delete('/MangeCar/{car}', [CarController::class, 'destroy'])->name('Mange
 
 
 // client review routes 
-
 Route::get("/client/ReviewPage" , [ReviewController::class , "create"])->middleware(['auth', 'verified'])->name('ReviewPage') ;
 Route::post("/client/ReviewPage" , [ReviewController::class , "store"])->middleware(['auth', 'verified'])->name('ReviewPage.post') ;
 
 
 
 // documents
-Route::get("/client/booking-invoice" , [BookingInvoiceController::class , "index"])
-->middleware(['auth', 'verified'])->name('BookingInvoicePage') ;
-
-
+Route::get("/client/booking-invoice" , [BookingInvoiceController::class , "index"])->middleware(['auth', 'verified'])->name('BookingInvoicePage') ;
 Route::get("/client/booking-invoice/{id}" , [BookingInvoiceController::class , "generateInvoicePdf"])
 ->middleware(['auth', 'verified'])->name('generateInvoicePdf') ;
-
-
-
-
-
-
 
 // notifications
 Route::post('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])
@@ -85,30 +72,20 @@ Route::post('/notifications/mark-as-read/{id}', [NotificationController::class, 
 Route::post('/notifications/mark-all-as-read', [NotificationController::class, 'markAllAsRead'])
     ->middleware(['auth', 'verified'])
     ->name('notifications.markAllAsRead');
-
-
-
-
-
-
-
-
-
-
-
+//   profile routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+//   auth routes
 require __DIR__.'/auth.php';
 require __DIR__.'/admin-auth.php';
 require __DIR__.'/washer-auth.php';
 
 
 
-
+// contact us routes
 Route::post("/contact"  , [ContactController::class , 'store']) ; 
 
 

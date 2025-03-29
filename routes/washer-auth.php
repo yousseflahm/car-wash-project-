@@ -26,7 +26,6 @@ Route::prefix('/washer')->middleware('guest')->group(function () {
     Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('washer.login.post');
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create']) ->name('washer.password.request');
-
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('washer.password.email');
 
     Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])->name('washer.password.reset');
@@ -35,7 +34,6 @@ Route::prefix('/washer')->middleware('guest')->group(function () {
 
 Route::prefix('washer')->middleware('auth:washer' , WasherAuth::class , 'washer.approved')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)->name('washer.verification.notice');
-
     Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
         ->middleware(['signed', 'throttle:6,1'])
         ->name('washer.verification.verify');
@@ -56,21 +54,16 @@ Route::prefix('washer')->middleware('auth:washer' , WasherAuth::class , 'washer.
 
     Route::get('dashboard', [WasherDashboardController::class, 'index']  )->middleware(['auth:washer', 'verified'])->name('washer.dashboard');
 
-    
     //  routes for handling booking in washer dashboard 
     Route::get('MangeBooking' , [BookingController::class , 'getBookingPageWasher'])->name('washer.getBookingPageWasher');
     Route::put('MangeBooking/{id}' , [BookingController::class , 'updateBookingStatus'])->name('washer.updateBookingStatus') ;
 
 
     // notifications
-Route::post('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])
-->middleware(['auth', 'verified'])
-->name('washer.notifications.markAsRead');
+    Route::post('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->middleware(['auth', 'verified'])->name('washer.notifications.markAsRead');
 
-// Mark all notifications as read
-Route::post('/notifications/mark-all-as-read', [NotificationController::class, 'markAllAsRead'])
-->middleware(['auth', 'verified'])
-->name('washer.notifications.markAllAsRead');
+    // Mark all notifications as read
+    Route::post('/notifications/mark-all-as-read', [NotificationController::class, 'markAllAsRead'])->middleware(['auth', 'verified'])->name('washer.notifications.markAllAsRead');
     
 });
 
