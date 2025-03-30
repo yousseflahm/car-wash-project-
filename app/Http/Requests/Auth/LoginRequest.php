@@ -31,7 +31,6 @@ class LoginRequest extends FormRequest
             'password' => ['required', 'string'],
         ];
     }
-
     /**
      * Attempt to authenticate the request's credentials.
      *
@@ -41,17 +40,13 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-       
-
         if ($this->isAdminLogin()) {
             $guard = 'admin'; 
         } elseif ($this->isWasherLogin()) {
             $guard = 'washer'; 
         }else{
             $guard = 'web' ; 
-
         }
-        
 
         if (! Auth::guard($guard)->attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
@@ -63,10 +58,9 @@ class LoginRequest extends FormRequest
         
         if ($guard === 'washer') {
             $washer = Auth::guard('washer')->user();
-    
-            // Check if the washer is approved
+            
             if ($washer->status !== 'approved') {
-                Auth::guard('washer')->logout(); // Log out the washer
+                Auth::guard('washer')->logout(); 
                 RateLimiter::hit($this->throttleKey());
     
                 throw ValidationException::withMessages([
@@ -86,7 +80,7 @@ class LoginRequest extends FormRequest
      */
     public function ensureIsNotRateLimited(): void
     {
-        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
+        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 100)) {
             return;
         }
 

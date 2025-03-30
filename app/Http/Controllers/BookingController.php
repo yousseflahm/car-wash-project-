@@ -16,8 +16,10 @@ class BookingController extends Controller
      */
     public function index()
     {
+
+     $userid = Auth::id();
         
-    $bookings = Booking::with(['car' , 'services' , 'washer'])->get(); 
+    $bookings = Booking::with(['car' , 'services' , 'washer'])->where('user_id' , $userid )->get(); 
 
     return Inertia::render('Profile/Booking', [
         'bookings' => $bookings->map(function ($booking) {

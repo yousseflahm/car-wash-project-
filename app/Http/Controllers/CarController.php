@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Car; // Ensure that the Car model exists in this namespace
 
 class CarController extends Controller
@@ -13,7 +14,9 @@ class CarController extends Controller
      */
     public function index()
     {
-        $Cars = Car::all();
+        $userid = Auth::id();
+
+        $Cars = Car::where("user_id" , $userid )->get();
 
         return Inertia::render('Profile/MangeCar', [
             'cars' => $Cars
@@ -26,7 +29,7 @@ class CarController extends Controller
     public function create()
     {
          return Inertia::render('Profile/MangeCar' , [
-            'cars' => Car::all()
+           'cars' => Car::where("user_id" , Auth::id() )->get() ,  
         ]); 
     }
 
@@ -54,15 +57,6 @@ class CarController extends Controller
 
        
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -89,10 +83,7 @@ class CarController extends Controller
             'brand' => $request->brand,
             'model' => $request->model,
         ]);
-
-
         return redirect()->route('MangeCar')->with('success', 'Car updated successfully');
-
     }
 
     /**
@@ -100,7 +91,7 @@ class CarController extends Controller
      */
     public function destroy(string $id)
     {
-       
+
         $car = Car::find($id);
         
         $car->delete();

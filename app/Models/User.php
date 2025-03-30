@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 
 class User extends Authenticatable 
 {
@@ -22,6 +23,7 @@ class User extends Authenticatable
         'lastName',
         'phone',
         'email',
+        'password',
         
 
         
