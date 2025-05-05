@@ -11,6 +11,7 @@ use App\Http\Controllers\dashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NotificationController;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Cookie;
 
 Route::get('/', function () {
     return Inertia::render('Accueil', [
@@ -86,7 +87,27 @@ require __DIR__.'/washer-auth.php';
 
 
 // contact us routes
-Route::post("/contact"  , [ContactController::class , 'store']) ; 
+Route::post("/contact"  , [ContactController::class , 'store']) ;
+
+
+
+//   language switcher
+
+Route::get('/lang/{locale}', function ($locale) {
+    if (!in_array($locale, ['en', 'fr'])) {
+        abort(400);
+    }
+
+
+    // Store in session
+    session(['locale' => $locale]);
+    
+   
+
+    return back();
+})->name('lang.switch');
+
+
 
 
 

@@ -69,6 +69,8 @@ class HandleInertiaRequests extends Middleware
                               ->latest()
                               ->get()
                 : [],
+
+             
         ];
     }
 }

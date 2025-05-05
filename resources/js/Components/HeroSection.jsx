@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
+import { usePage } from "@inertiajs/react";
 
 export default function HeroSection() {
+  const{translations} = usePage().props;
+  const t  = translations.messages;
+  console.log(t);
+ 
   return (
     <div className="h-[calc(100vh)] bg-[url('/background.jpg')] bg-cover bg-no-repeat bg-center">
       <div className="h-full w-full bg-blue-400 bg-opacity-50 flex items-center justify-center">
@@ -12,7 +17,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: .5 , ease: "easeOut" }}
           >
-            Expert Car Care Delivered to You – Fast, Affordable, and Always Sparkling Clean!
+            {t.welcome}
           </motion.h1>
 
          
@@ -22,7 +27,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: .5 , delay: 0.3, ease: "easeOut" }}
           >
-            We offer premium car cleaning services right at your doorstep. Our professional team ensures your car gets the care it deserves, no matter where you are. Experience a fast, reliable, and eco-friendly solution for a sparkling clean vehicle today!
+              {t.welcomeText}
           </motion.p>
 
         
@@ -35,7 +40,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Get Started
+            {t.buttonText}
           </motion.a>
         </div>
       </div>

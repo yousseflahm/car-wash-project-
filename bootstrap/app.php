@@ -14,10 +14,12 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
+            \App\Http\Middleware\SetLocale::class,
         ]);
 
         //
         $middleware->alias([
+            'set.locale' => \App\Http\Middleware\SetLocale::class,
             'washer.approved' => \App\Http\Middleware\WasherIsApproved::class,
         ]);
     })

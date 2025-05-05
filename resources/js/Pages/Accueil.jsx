@@ -9,6 +9,7 @@ import ContactUs from "@/Components/Contact";
 import Footer from "@/Components/Footer";
 
 export default function Welcome() {
+   
     return (
         <>
             <Head title="Welcome" />
