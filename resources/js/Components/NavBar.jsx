@@ -1,7 +1,11 @@
 import { Link } from "@inertiajs/react";
 import { useState } from "react";
+import { usePage } from "@inertiajs/react";
 
 export default function NavBar() {
+    const{translations} = usePage().props;
+    const t  = translations.messages;
+    
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [languageDropdownVisible, setLanguageDropdownVisible] = useState(false);
@@ -39,25 +43,25 @@ export default function NavBar() {
                     href="#home"
                     className="text-base font-kanit font-normal text-blue-400 hover:text-blue-600"
                 >
-                    Home
+                   {t.home}
                 </a>
                 <a
                     href="#services"
                     className="text-base font-kanit font-normal hover:text-blue-600"
                 >
-                    Services
+                    {t.services}
                 </a>
                 <a
                     href="#about"
                     className="text-base font-kanit font-normal hover:text-blue-600"
                 >
-                    About Us
+                   {t.about}
                 </a>
                 <a
                     href="#contact"
                     className="text-base font-kanit font-normal hover:text-blue-600"
                 >
-                    Contact Us
+                   {t.contact}
                 </a>
 
                 {/* Work With Us Dropdown */}
@@ -67,7 +71,7 @@ export default function NavBar() {
                             onClick={toggleDropdown}
                             className="text-base font-normal hover:text-blue-600 flex items-center transition duration-200"
                         >
-                            Work With Us
+                            {t.workWithUs}
                             <img
                                 src="/fleche.svg"
                                 alt="fleche"
@@ -89,13 +93,13 @@ export default function NavBar() {
                                 href={route("admin.login")}
                                 className="block px-4 py-2 text-black hover:bg-gray-100"
                             >
-                                Admin login
+                               {t.adminLogin}
                             </Link>
                             <Link
                                 href={route('washer-landing')}
                                 className="block px-4 py-2 text-black hover:bg-gray-100"
                             >
-                                Washer Area
+                                {t.washerArea}
                             </Link>
                         </div>
                     )}
@@ -151,13 +155,13 @@ export default function NavBar() {
                     href={route("login")}
                     className="text-base font-semibold font-kanit hover:text-blue-600 transition duration-200 py-2 px-2 ml-4 text-black"
                 >
-                    Log in
+                   {t.Login}
                 </Link>
                 <Link
                     href={route("register")}
                     className="text-base font-semibold font-kanit text-white bg-blue-400 hover:bg-blue-600 transition duration-200 py-2 px-4 rounded-full"
                 >
-                    Register
+                    {t.register}
                 </Link>
             </div>
 
@@ -170,28 +174,28 @@ export default function NavBar() {
                             onClick={toggleMenu}
                             className="text-base font-normal text-blue-400 hover:text-blue-600"
                         >
-                            Home
+                            {t.home}
                         </a>
                         <a
                             href="#services"
                             onClick={toggleMenu}
                             className="text-base font-normal hover:text-blue-600"
                         >
-                            Services
+                            {t.services}
                         </a>
                         <a
                             href="#about"
                             onClick={toggleMenu}
                             className="text-base font-normal hover:text-blue-600"
                         >
-                            About Us
+                            {t.about}
                         </a>
                         <a
                             href="#contact"
                             onClick={toggleMenu}
                             className="text-base font-normal hover:text-blue-600"
                         >
-                            Contact Us
+                            {t.contact}
                         </a>
 
                         {/* Work With Us Dropdown for Mobile */}
@@ -200,7 +204,7 @@ export default function NavBar() {
                                 onClick={toggleDropdown}
                                 className="text-base font-normal hover:text-blue-600"
                             >
-                                Work With Us
+                               {t.workWithUs}
                             </button>
 
                             {dropdownVisible && (
@@ -215,14 +219,14 @@ export default function NavBar() {
                                         onClick={toggleMenu}
                                         className="block px-4 py-2 text-black hover:bg-gray-100"
                                     >
-                                        Admin login
+                                        {t.adminLogin}
                                     </Link>
                                     <Link
                                         href="/work-with-us/washer"
                                         onClick={toggleMenu}
                                         className="block px-4 py-2 text-black hover:bg-gray-100"
                                     >
-                                        Washer Area
+                                        {t.washerArea}
                                     </Link>
                                 </div>
                             )}
@@ -268,14 +272,14 @@ export default function NavBar() {
                                 href={route("login")}
                                 className="text-base font-semibold text-blue-400 border border-blue-400 hover:bg-blue-600 hover:text-white transition duration-200 py-2 px-4 rounded-full"
                             >
-                                Login
+                               {t.Login}
                             </Link>
                             <Link
                                 href={route("register")}
                                 onClick={toggleMenu}
                                 className="text-base font-semibold text-white bg-blue-400 hover:bg-blue-600 transition duration-200 py-2 px-4 rounded-full text-center"
                             >
-                                Register
+                               {t.register}
                             </Link>
                         </div>
                     </div>

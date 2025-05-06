@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { usePage } from "@inertiajs/react";
 
 export default function AboutUs() {
+    const {translations} = usePage().props;
+    const t = translations.messages;
     return (
         <section className="relative bg-cover bg-center bg-no-repeat py-24 " >
             {/* Background Overlay */}
@@ -15,7 +18,7 @@ export default function AboutUs() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        About Us
+                        {t.tA1}
                     </motion.h2>
                     <motion.h1
                         className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-blue-600 text-center mt-4"
@@ -23,9 +26,9 @@ export default function AboutUs() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Premium{" "}
+                       {t.tA2}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-400 to-blue-900">
-                            Car Care Services
+                           {t.tA3}
                         </span>
                     </motion.h1>
                 </div>
@@ -38,21 +41,19 @@ export default function AboutUs() {
                     transition={{ duration: 0.7, delay: 0.4 }}
                 >
                     <p>
-                        Since our founding, <span className="font-semibold text-blue-400">Premium Car Wash</span> has been committed to delivering 
-                        <span className=""> top-quality</span> car cleaning services. 
-                        From a humble start, we've grown into a well-respected brand, trusted by 
-                        <span className="text-blue-400"> thousands of satisfied customers.</span> 
-                        Our team ensures that every vehicle gets <span className="">the care and shine it deserves.</span>
+                       {t.aDtext1} <span className="font-semibold text-blue-400">{t.aDtext2}</span> {t.aDtext3}
+                        <span className="text-blue-400"> {t.aDtext4}</span> 
+                        {t.aDtext5}
                     </p>
                 </motion.div>
 
                 {/* Business Information */}
                 <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {[
-                        { icon: "📍", title: "Our Location", text: "Casablanca, Morocco" },
-                        { icon: "📞", title: "Call Us", text: "+212 600 123 456" },
-                        { icon: "💼", title: "Our Experience", text: "10+ Years in Car Wash & Detailing" },
-                        { icon: "🚗", title: "Happy Clients", text: "Over 5,000 Cars Washed" },
+                        { icon: "📍", title: t.bussinesCardInfoTitle1 , text: "Casablanca, Morocco" },
+                        { icon: "📞", title: t.bussinesCardInfoTitle2, text: "+212 600 123 456" },
+                        { icon: "💼", title: t.bussinesCardInfoTitle3, text: t.bussinesCard3Desc },
+                        { icon: "🚗", title: t.bussinessCardInfoTitle4, text: t.bussinessCard4Desc },
                     ].map((item, index) => (
                         <motion.div 
                             key={index} 

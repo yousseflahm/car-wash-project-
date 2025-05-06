@@ -4,7 +4,7 @@ import { usePage } from "@inertiajs/react";
 export default function HeroSection() {
   const{translations} = usePage().props;
   const t  = translations.messages;
-  console.log(t);
+  // console.log(t);
  
   return (
     <div className="h-[calc(100vh)] bg-[url('/background.jpg')] bg-cover bg-no-repeat bg-center">

@@ -1,5 +1,6 @@
 import { useForm } from "@inertiajs/react";
 import { motion } from "framer-motion";
+import {usePage} from "@inertiajs/react";
 
 
 
@@ -10,15 +11,15 @@ export default function ContactUs( ) {
         text: "",
     });
 
-    
-   
-
-
     const submit = (e) => {
        
         e.preventDefault();
         post("/contact");
     };
+
+    const {translations} = usePage().props;
+    const t = translations.messages
+
 
     return (
         <section className="relative bg-cover bg-[url('/backgroundContact.png')] bg-center bg-no-repeat py-24">
@@ -33,7 +34,7 @@ export default function ContactUs( ) {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        Contact Us
+                        {t.ct1}
                     </motion.h2>
                     <motion.h1
                         className="lg:text-6xl text-4xl md:text-5xl font-bold tracking-tight text-blue-600 mt-4"
@@ -41,9 +42,9 @@ export default function ContactUs( ) {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Get in{" "}
+                        {t.ct2}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-400 to-blue-900">
-                            Touch
+                            {t.ct3}
                         </span>
                     </motion.h1>
                 </div>
@@ -60,7 +61,7 @@ export default function ContactUs( ) {
                     <div className="grid grid-cols-1 gap-6">
                         <div>
                             <label className="text-blue-600 block text-lg font-semibold">
-                                Name
+                                {t.name}
                             </label>
                             <input
                                 type="text"
@@ -82,7 +83,7 @@ export default function ContactUs( ) {
 
                         <div>
                             <label className="text-blue-600 block text-lg font-semibold">
-                                Email
+                                {t.email}
                             </label>
                             <input
                                 type="email"
@@ -104,7 +105,7 @@ export default function ContactUs( ) {
 
                         <div>
                             <label className="text-blue-600 block text-lg font-semibold">
-                                Message
+                               {t.message}
                             </label>
                             <textarea
                                 name="text"
@@ -131,7 +132,7 @@ export default function ContactUs( ) {
                                 className="px-6 py-3 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-900 text-white text-lg font-semibold rounded-full shadow-md hover:opacity-90 transition-all duration-300"
                                 whileTap={{ scale: 0.95 }}
                             >
-                                {processing ? "Sending..." : "Send Message"}
+                                {processing ? t.sendMessage : t.send}
                             </motion.button>
                         </div>
                     </div>

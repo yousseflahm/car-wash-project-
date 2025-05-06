@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
+import { usePage } from '@inertiajs/react';
 
 export default function Services() {
+    const {translations} = usePage().props;
+    const t = translations.messages;
+    
+    
     return (
         <div className="bg-blue-100 py-12 overflow-x-hidden">
             <div className="mx-auto max-w-7xl pl-2 lg:px-8">
@@ -11,7 +16,7 @@ export default function Services() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Car Wash Services
+                        {t.tS1}
                     </motion.h2>
                     <motion.h1
                         className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-blue-600 text-center"
@@ -19,9 +24,9 @@ export default function Services() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Premium
+                        {t.tS2}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-400 to-blue-900">
-                            Car Care Services
+                           {t.tS3}
                         </span>
                     </motion.h1>
                     <motion.p
@@ -30,9 +35,7 @@ export default function Services() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Experience the best car wash services with a range of
-                        options designed to keep your car sparkling clean,
-                        inside and out.
+                       {t.sDtext}
                     </motion.p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -51,12 +54,10 @@ export default function Services() {
                                         className="h-6 w-6 text-white"
                                     />
                                 </div>
-                                Exterior Hand Wash
+                                {t.ServiceTitle1}
                             </dt>
                             <dd className="mt-2 text-base leading-7 text-gray-600">
-                                Our exterior hand wash service ensures your car
-                                gets the best treatment, removing dirt, grime,
-                                and stains, leaving a shiny, clean surface.
+                                {t.service1Text}
                             </dd>
                         </motion.div>
 
@@ -74,12 +75,10 @@ export default function Services() {
                                         className="h-6 w-6 text-white"
                                     />
                                 </div>
-                                Interior Cleaning
+                                {t.ServiceTitle2}
                             </dt>
                             <dd className="mt-2 text-base leading-7 text-gray-600">
-                                We clean the interior of your vehicle, vacuuming
-                                carpets and upholstery, wiping down surfaces,
-                                and leaving your car fresh and spotless.
+                                {t.service2Text}
                             </dd>
                         </motion.div>
 
@@ -97,12 +96,10 @@ export default function Services() {
                                         className="h-6 w-6 text-white"
                                     />
                                 </div>
-                                Wax & Polish
+                                {t.ServiceTitle3}
                             </dt>
                             <dd className="mt-2 text-base leading-7 text-gray-600">
-                                Our wax and polish service provides a protective
-                                layer that enhances the car’s shine, preserving
-                                its paint and keeping it looking brand new.
+                                {t.service3Text}
                             </dd>
                         </motion.div>
 
@@ -120,13 +117,10 @@ export default function Services() {
                                         className="h-6 w-6 text-white"
                                     />
                                 </div>
-                                Engine Bay Cleaning
+                               {t.ServiceTitle4}
                             </dt>
                             <dd className="mt-2 text-base leading-7 text-gray-600">
-                                Keep your engine running smoothly with our
-                                engine bay cleaning service, designed to remove
-                                dirt, oil, and debris from your engine
-                                components.
+                               {t.service4Text}
                             </dd>
                         </motion.div>
                     </dl>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { usePage } from "@inertiajs/react";
 
 const comments = [
     {
@@ -26,6 +27,9 @@ const comments = [
 
 
 export default function Reviews() {
+  
+    const{translations} = usePage().props;
+    const t  = translations.messages;
     return (
         <div className="bg-cover bg-[url('/backgroundReview.jpg')] bg-center bg-no-repeat">
 
@@ -40,7 +44,7 @@ export default function Reviews() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        What Our Clients Say
+                       {t.tr1}
                     </motion.h2>
                     <motion.h1
                         className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-blue-600"
@@ -48,18 +52,18 @@ export default function Reviews() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Hear From
+                        {t.tr2}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-400 to-blue-900">
-                            Our Customers
+                            {t.tr3}
                         </span>
                     </motion.h1>
                     <motion.p
-                        className="mt-6 text-md text-gray-600 max-w-lg mx-auto"
+                        className="mt-6 text-md text-white max-w-lg mx-auto"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Real experiences from our valued customers. See why they love our services!
+                        {t.trDtext}
                     </motion.p>
                 </div>
 
