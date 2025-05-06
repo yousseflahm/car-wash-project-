@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { usePage } from "@inertiajs/react";
 
 export default function AboutUsWasher() {
+    const {translations} = usePage().props;
+    const t = translations.messages;
     return (
         <section className="relative bg-cover bg-[url('/washerAccPic/pc2.jpg')] bg-center bg-no-repeat py-24">
             <div className="absolute inset-0 bg-blue-400 bg-opacity-50"></div>
@@ -14,7 +17,7 @@ export default function AboutUsWasher() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        About Us
+                       {t.tA1}
                     </motion.h2>
                     <motion.h1
                         className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-blue-600 text-center mt-4"
@@ -22,9 +25,9 @@ export default function AboutUsWasher() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Join Our{" "}
+                        {t.wAt1} {" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-400 to-blue-900">
-                            Professional Team
+                            {t.wAt2}
                         </span>
                     </motion.h1>
                 </div>
@@ -37,15 +40,11 @@ export default function AboutUsWasher() {
                     transition={{ duration: 0.7, delay: 0.4 }}
                 >
                     <p className="text-white">
-                        At{" "}
+                        {t.wAdesc1}{" "}
                         <span className="font-semibold text-blue-400">
-                            Premium Car Wash
+                          {t.wAdesc2}
                         </span>
-                        , we believe in empowering our team to deliver
-                        exceptional car care services. From flexible schedules
-                        to competitive pay, we provide the tools and support you
-                        need to thrive. Join us and be part of a team that
-                        values your skills and dedication.
+                        {t.wAdesc3}{" "}
                     </p>
                 </motion.div>
 
@@ -54,23 +53,23 @@ export default function AboutUsWasher() {
                     {[
                         {
                             icon: "💼",
-                            title: "Flexible Hours",
-                            text: "Work on your own schedule",
+                            title: t.waCard1 , 
+                            text: t.waCarddesc1
                         },
                         {
                             icon: "💰",
-                            title: "Competitive Pay",
-                            text: "Earn what you deserve",
+                            title: t.waCard2 , 
+                            text: t.waCarddesc2
                         },
                         {
                             icon: "🚗",
-                            title: "Training Provided",
-                            text: "Learn from the best in the industry",
+                            title: t.waCard3 , 
+                            text: t.waCarddesc3
                         },
                         {
                             icon: "🌟",
-                            title: "Career Growth",
-                            text: "Opportunities to advance",
+                            title: t.waCard4 , 
+                            text: t.waCarddesc4
                         },
                     ].map((item, index) => (
                         <motion.div

@@ -75,8 +75,53 @@ return [
     "PrivacyPolicy" => "Privacy Policy",
     "TermsOfService" => "Terms of Service",
     "RefundPolicy" => "Refund Policy",
-    "cr" => "Premium Car Wash. All Rights Reserved." 
+    "cr" => "Premium Car Wash. All Rights Reserved."  , 
 
+    // landing page for washer area
+
+    "workInfo" => "Work Info",
+    "heroTitle" => "Join Our Team of Car Care Experts!",
+    "heroDescription" => " Become part of a professional team that delivers top-notch car cleaning services.
+             Enjoy flexible hours, competitive pay, and the opportunity 
+             to work with a company that values your skills and dedication. 
+             Start your journey with us today!" , 
+    "heroButton" => "Apply Now",
+
+    "wt1" => "Join Our",
+    "wt2" => " Washer Team",
+    "wd1" =>"At" , 
+    "wd2" => "Premium Car Wash" ,
+    "wd3" => "  we offer flexible opportunities to join our team of professional car washers. 
+                        Enjoy competitive pay, training, and a supportive work environment. Start your journey with us today!
+                    " ,
+    "wCard1" => "How to Apply",
+    "wCard2" => "Payment",
+    "wCard3" => "Workdays",
+    "wCard4" => "Get Started",
+    "textcard1" => "Fill out our online application form to get started." , 
+    "textcard2" => "Weekly payments via bank transfer or cash." ,
+    "textcard3" => "Monday to Saturday, with flexible shifts available." ,
+    "textcard4" => "Begin your journey with us and start earning right away." ,
+    "buttonText" => "Apply Now",
+
+    "wAt1" => "Join Our" ,
+    "wAt2" => " Professional Team" ,
+
+    "wAdesc1" => "At",
+    "wAdesc2" => "Glow Car Wash " ,
+    "wAdesc3" => ", we believe in empowering our team to deliver
+                        exceptional car care services. From flexible schedules
+                        to competitive pay, we provide the tools and support you
+                        need to thrive. Join us and be part of a team that
+                        values your skills and dedication." ,
+    "waCard1"=> "Flexible Hours" , 
+    "waCard2"=> "Competitive Pay" ,
+    "waCard3"=> "Training Provided" ,
+    "waCard4"=> "Career Growth" ,
+    "waCarddesc1"=> "Work on your own schedule" ,
+    "waCarddesc2"=> "Earn what you deserve" ,
+    "waCarddesc3"=> "Learn from the best in the industry" ,    
+    "waCarddesc4"=> "Opportunities to advance" ,
 
 
 ] ; 

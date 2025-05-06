@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { usePage } from "@inertiajs/react";
 
 export default function WorkInfoSection() {
+    const {translations} = usePage().props;
+    const t = translations.messages
     return (
         <section className="relative bg-cover bg-center bg-no-repeat py-24">
             {/* Background Overlay */}
@@ -15,7 +18,7 @@ export default function WorkInfoSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        Work With Us
+                        {t.workWithUs}
                     </motion.h2>
                     <motion.h1
                         className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-blue-600 text-center mt-4"
@@ -23,9 +26,9 @@ export default function WorkInfoSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Join Our{" "}
+                       {t.wt1}{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-400 to-blue-900">
-                            Washer Team
+                            {t.wt2}
                         </span>
                     </motion.h1>
                 </div>
@@ -38,9 +41,8 @@ export default function WorkInfoSection() {
                     transition={{ duration: 0.7, delay: 0.4 }}
                 >
                     <p>
-                        At <span className="font-semibold text-blue-400">Premium Car Wash</span>, we offer flexible opportunities to join our team of professional car washers. 
-                        Enjoy competitive pay, training, and a supportive work environment. Start your journey with us today!
-                    </p>
+                        {t.wd1} <span className="font-semibold text-blue-400">{t.wd2}</span>, {t.wd3}
+                      </p>
                 </motion.div>
 
                 {/* Work Info Cards */}
@@ -48,23 +50,23 @@ export default function WorkInfoSection() {
                     {[
                         { 
                             icon: "📝", 
-                            title: "How to Apply", 
-                            text: "Fill out our online application form to get started." 
+                            title: t.wCard1 , 
+                            text: t.textcard1
                         },
                         { 
                             icon: "💳", 
-                            title: "Payment", 
-                            text: "Weekly payments via bank transfer or cash." 
+                            title: t.wCard2 , 
+                            text: t.textcard2
                         },
                         { 
                             icon: "📅", 
-                            title: "Workdays", 
-                            text: "Monday to Saturday, with flexible shifts available." 
+                            title: t.wCard3 , 
+                            text: t.textcard3
                         },
                         { 
                             icon: "🚀", 
-                            title: "Get Started", 
-                            text: "Begin your journey with us and start earning right away." 
+                            title: t.wCard4 , 
+                            text: t.textcard4 
                         },
                     ].map((item, index) => (
                         <motion.div 
@@ -92,7 +94,7 @@ export default function WorkInfoSection() {
                         href="/apply"
                         className="inline-block px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-all"
                     >
-                        Apply Now
+                       {t.buttonText}
                     </a>
                 </motion.div>
             </div>

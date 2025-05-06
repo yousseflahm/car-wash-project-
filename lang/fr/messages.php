@@ -65,6 +65,52 @@ return [
     "RefundPolicy" => "Politique de Remboursement",
     "cr" => "Lavage de Voiture Premium. Tous droits réservés.",
 
+    // landing page for washer area
+
+    "workInfo" => "informations de travail",
+    "heroTitle" => "Rejoignez notre équipe d'experts en soin automobile !",
+    "heroDescription" => "Faites partie d’une équipe professionnelle qui offre des services de nettoyage automobile de haute qualité.  
+             Profitez d’horaires flexibles, d’une rémunération compétitive et de l’opportunité de travailler avec une entreprise qui valorise vos compétences et votre engagement.  
+             Commencez votre aventure avec nous dès aujourd’hui !",
+
+    "heroButton" => "Postuler maintenant",
+    "wt1" => "Rejoignez notre",
+    "wt2" => "équipe de laveurs",
+    "wd1" => "Chez",
+    "wd2" => "Premium Car Wash",
+    "wd3" => "nous offrons des opportunités flexibles pour rejoindre notre équipe de laveurs professionnels.  
+                        Bénéficiez d’une rémunération compétitive, d’une formation, et d’un environnement de travail bienveillant.  
+                        Commencez votre aventure avec nous dès aujourd’hui !",
+    "wCard1" => "Comment postuler",
+    "wCard2" => "Paiement",
+    "wCard3" => "Jours de travail",
+    "wCard4" => "Commencer",
+
+    "textcard1" => "Remplissez notre formulaire de candidature en ligne pour commencer.",
+    "textcard2" => "Paiements hebdomadaires par virement bancaire ou en espèces.",
+    "textcard3" => "Du lundi au samedi, avec des horaires flexibles disponibles.",
+    "textcard4" => "Commencez votre aventure avec nous et gagnez de l'argent dès maintenant.",
+    "buttonText" => "Postuler maintenant",
+
+    "wAt1" => "Rejoignez notre",
+    "wAt2" => "équipe professionnelle",
+
+    "wAdesc1" => "Chez",
+    "wAdesc2" => "Glow Car Wash",
+    "wAdesc3" => ", nous croyons en l’importance de valoriser notre équipe pour offrir des services de soin automobile exceptionnels.  
+                        Des horaires flexibles à une rémunération compétitive, nous vous offrons les outils et le soutien nécessaires pour réussir.  
+                        Rejoignez-nous et faites partie d’une équipe qui valorise vos compétences et votre engagement.",
+    "waCard1" => "Horaires flexibles",
+    "waCard2" => "Rémunération compétitive",
+    "waCard3" => "Formation assurée",
+    "waCard4" => "Évolution de carrière",
+                    
+    "waCarddesc1" => "Travaillez selon votre propre emploi du temps",
+    "waCarddesc2" => "Gagnez ce que vous méritez",
+    "waCarddesc3" => "Apprenez auprès des meilleurs du secteur",
+    "waCarddesc4" => "Des opportunités d’avancement",
+   
+
 
 
 ];

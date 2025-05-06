@@ -1,12 +1,19 @@
 import { Link } from "@inertiajs/react";
 import { useState } from "react";
+import { usePage } from "@inertiajs/react";
 
 export default function NavBarAccueilWasher() {
-    const [dropdownVisible, setDropdownVisible] = useState(false);
+
+    const { translations } = usePage().props;
+    const t = translations.messages
+   
+    const [languageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleDropdown = () => {
-        setDropdownVisible(!dropdownVisible);
+   
+
+    const toggleLanguageDropdown = () => {
+        setLanguageDropdownVisible(!languageDropdownVisible);
     };
 
     const toggleMenu = () => {
@@ -36,26 +43,68 @@ export default function NavBarAccueilWasher() {
                     href="#home"
                     className="text-base  font-kanit font-normal text-blue-400 hover:text-blue-600"
                 >
-                    Home
+                    {t.home}
                 </a>
                 <a
                     href="#workInfo"
                     className="text-base font-kanit font-normal hover:text-blue-600"
                 >
-                    work info
+                    {t.workInfo}
                 </a>
                 <a
                     href="#about"
                     className="text-base  font-kanit font-normal hover:text-blue-600"
                 >
-                    About Us
+                   {t.about}
                 </a>
                 <a
                     href="#contact"
                     className="text-base  font-kanit  font-normal hover:text-blue-600"
                 >
-                    Contact Us
+                   {t.contact}
                 </a>
+
+                <div className="relative font-kanit">
+                    <div className="flex items-center">
+                        <button
+                            onClick={toggleLanguageDropdown}
+                            className="text-base font-normal hover:text-blue-600 flex items-center transition duration-200"
+                        >
+                            EN/FR
+                            <img
+                                src="/fleche.svg"
+                                alt="arrow"
+                                className={`h-3 pl-2 transform transition-transform duration-200 ${
+                                    languageDropdownVisible ? "-rotate-180" : "rotate-0"
+                                }`}
+                            />
+                        </button>
+                    </div>
+
+                    {languageDropdownVisible && (
+                        <div className="absolute bg-white border rounded-md shadow-md mt-2 w-32 right-0">
+                            <div className="flex justify-end p-3">
+                                <div onClick={toggleLanguageDropdown}>
+                                    <img src="close.svg" alt="close" className="h-2" />
+                                </div>
+                            </div>
+                            <a
+                                href={route("lang.switch", ["en"])}
+                                onClick={toggleLanguageDropdown}
+                                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-100"
+                            >
+                                English
+                            </a>
+                            <a
+                                href={route("lang.switch", ["fr"])}
+                                onClick={toggleLanguageDropdown}
+                                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-100"
+                            >
+                                Français
+                            </a>
+                        </div>
+                    )}
+                </div>
 
               
             </div>
@@ -66,13 +115,13 @@ export default function NavBarAccueilWasher() {
                     href={route("washer.login")}
                     className="text-base font-semibold  font-kanit   hover:text-blue-600 transition duration-200 py-2 px-2 ml-4  text-black	 "
                 >
-                    Log in
+                    {t.Login}
                 </Link>
                 <Link
                     href={route("washer.register")}
                     className="text-base font-semibold font-kanit text-white bg-blue-400 hover:bg-blue-600 transition duration-200 py-2 px-4 rounded-full"
                 >
-                    Register
+                    {t.register}
                 </Link>
             </div>
 
@@ -85,29 +134,63 @@ export default function NavBarAccueilWasher() {
                             onClick={toggleMenu}
                             className="text-base font-normal text-blue-400 hover:text-blue-600"
                         >
-                            Home
+                            {t.home}
                         </a>
                         <a
                             href="#workInfo"
                             onClick={toggleMenu}
                             className="text-base font-normal hover:text-blue-600"
                         >
-                            work info
+                            {t.workInfo}
                         </a>
                         <a
                             href="#about"
                             onClick={toggleMenu}
                             className="text-base font-normal hover:text-blue-600"
                         >
-                            About Us
+                           {t.about}
                         </a>
                         <a
                             href="#contact"
                             onClick={toggleMenu}
                             className="text-base font-normal hover:text-blue-600"
                         >
-                            Contact Us
+                           {t.contact}
                         </a>
+
+                         {/* Language Switcher for Mobile */}
+                         <div className="relative">
+                            <button
+                                onClick={toggleLanguageDropdown}
+                                className="text-base font-normal hover:text-blue-600"
+                            >
+                                Language (EN/FR)
+                            </button>
+
+                            {languageDropdownVisible && (
+                                <div className="mt-2 ml-4">
+                                    <div className="flex justify-end p-3">
+                                        <div onClick={toggleLanguageDropdown}>
+                                            <img src="close.svg" alt="close" className="h-4" />
+                                        </div>
+                                    </div>
+                                    <a
+                                        href={route("lang.switch", ["en"])}
+                                        onClick={toggleMenu}
+                                        className="block w-full text-left px-4 py-2 text-black hover:bg-gray-100"
+                                    >
+                                        English
+                                    </a>
+                                    <a
+                                        href={route("lang.switch", ["fr"])}
+                                        onClick={toggleMenu}
+                                        className="block w-full text-left px-4 py-2 text-black hover:bg-gray-100"
+                                    >
+                                        Français
+                                    </a>
+                                </div>
+                            )}
+                        </div>
 
 
 
@@ -117,14 +200,14 @@ export default function NavBarAccueilWasher() {
                                 href={route("washer.login")}
                                 className="text-base font-semibold text-blue-400 border border-blue-400 hover:bg-blue-600 hover:text-white transition duration-200 py-2 px-4 rounded-full"
                             >
-                                Login
+                               {t.Login}
                             </Link>
                             <Link
                                 href={route("washer.register")}
                                 onClick={toggleMenu}
                                 className="text-base font-semibold text-white bg-blue-400 hover:bg-blue-600 transition duration-200 py-2 px-4 rounded-full text-center"
                             >
-                                Register
+                                {t.register}
                             </Link>
                         </div>
                     </div>

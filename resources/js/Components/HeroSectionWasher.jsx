@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import { usePage } from "@inertiajs/react";
 
 export default function HeroSectionWasher() {
+  const { translations } = usePage().props;
+  const t = translations.messages;
+
   return (
     <div className="h-[calc(100vh)] bg-[url('/washerAccPic/pc1.jpg')] bg-cover bg-no-repeat bg-center">
       <div className="h-full w-full bg-blue-400 bg-opacity-50 flex items-center justify-end">
@@ -12,7 +16,7 @@ export default function HeroSectionWasher() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Join Our Team of Car Care Experts!
+            {t.heroTitle}
           </motion.h1>
 
           {/* Worker-Focused Description */}
@@ -22,7 +26,7 @@ export default function HeroSectionWasher() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            Become part of a professional team that delivers top-notch car cleaning services. Enjoy flexible hours, competitive pay, and the opportunity to work with a company that values your skills and dedication. Start your journey with us today!
+            {t.heroDescription}
           </motion.p>
 
           {/* Call-to-Action Button for Workers */}
@@ -35,7 +39,7 @@ export default function HeroSectionWasher() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Apply Now
+            {t.heroButton}
           </motion.a>
         </div>
       </div>
