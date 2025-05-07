@@ -123,5 +123,57 @@ return [
     "waCarddesc3"=> "Learn from the best in the industry" ,    
     "waCarddesc4"=> "Opportunities to advance" ,
 
+    //  login page client 
+
+    "loginTitle" => "Log in to your account",
+    "password" => "Password",
+    "rememberMe" => "Remember Me",
+    "forgotPassword" => "Forgot Your Password?",
+    "loginButton" => "Log In",
+    "logingButton" => "Logging in...",
+    "redirectToSingUp" => " Don't have an account? Sign up here",
+
+    "headline" => "Trusted by Thousands!",
+    "paragraph1" => "We have served  10,000+",
+    "paragraph2" => "happy customers, delivering top-quality car wash and detailing
+                        services.",
+    "paragraph3" => " Our professional team ensures that every car shines with
+                        a spotless finish. Experience premium care for your
+                        vehicle today!",
+    "happyClients" => "Happy Clients",
+    "customersRating" => "Customer Ratings",
+    "satisfiedGuarantee" => "Satisfied Guarantee",
+
+
+    // Registration Page
+    "registerTitle" => "Create Your Account", // "Créez votre compte"
+    "registerHeadline" => "Begin Your Journey With Us", // "Commencez votre voyage avec nous"
+    "registerSubtitle1" => "Join our growing family of car enthusiasts", // "Rejoignez notre famille grandissante d'amateurs de voitures"
+    "registerSubtitle2" => "premium automotive care services tailored just for you", // "services de soins automobiles premium conçus pour vous"
+    "registerBenefit1" => "Support", // "Support"
+    "registerBenefit2" => "Service Rating", // "Note de service"
+    "registerBenefit3" => "Locations", // "Emplacements"
+
+// Form Fields
+    "registerName" => "First Name", // "Prénom"
+    "registerNamePlaceholder" => "Your first name", // "Votre prénom"
+    "registerLastName" => "Last Name", // "Nom de famille"
+    "registerLastNamePlaceholder" => "Your last name", // "Votre nom de famille"
+    "registerPhone" => "Phone Number", // "Numéro de téléphone"
+    "registerPhonePlaceholder" => "Your phone number", // "Votre numéro de téléphone"
+    "registerEmail" => "Email Address", // "Adresse email"
+    "registerEmailPlaceholder" => "Your email address", // "Votre adresse email"
+    "registerPassword" => "Password", // "Mot de passe"
+    "registerPasswordPlaceholder" => "Create a password", // "Créez un mot de passe"
+    "registerConfirmPassword" => "Confirm Password", // "Confirmez le mot de passe"
+    "registerConfirmPasswordPlaceholder" => "Confirm your password", // "Confirmez votre mot de passe"
+
+// Buttons & Links
+    "registerButton" => "Sign Up", // "S'inscrire"
+    "registerProcessing" => "Creating account...", // "Création du compte..."
+    "registerLoginLink" => "Already have an account? Log in here", // "Vous avez déjà un compte? Connectez-vous ici"
+
+
+
 
 ] ; 

@@ -109,6 +109,53 @@ return [
     "waCarddesc2" => "Gagnez ce que vous méritez",
     "waCarddesc3" => "Apprenez auprès des meilleurs du secteur",
     "waCarddesc4" => "Des opportunités d’avancement",
+
+    // login page client 
+
+    "loginTitle" => "Connectez-vous à votre compte",
+    "password" => "Mot de passe",
+    "rememberMe" => "Se souvenir de moi",
+    "forgotPassword" => "Mot de passe oublié ?",
+    "loginButton" => "Se connecter",
+    "logingButton" => "Connexion en cours...",
+    "redirectToSingUp" => "Vous n’avez pas de compte ? Inscrivez-vous ici",
+
+    "headline" => "Faites confiance à des milliers de clients !",
+    "paragraph1" => "Nous avons servi plus de 10 000",
+    "paragraph2" => "clients satisfaits, en offrant des services de lavage et de detailing de qualité supérieure.",
+    "paragraph3" => "Notre équipe professionnelle garantit que chaque voiture brille avec une finition impeccable. Offrez à votre véhicule un soin premium dès aujourd’hui !",
+    "happyClients" => "Clients satisfaits",
+    "customersRating" => "Avis des clients",
+    "satisfiedGuarantee" => "Satisfaction garantie",
+
+
+     // Registration Page
+    "registerTitle" => "Créez votre compte",
+    "registerHeadline" => "Commencez votre voyage avec nous",
+    "registerSubtitle1" => "Rejoignez notre famille grandissante d'amateurs de voitures",
+    "registerSubtitle2" => "services de soins automobiles premium conçus pour vous",
+    "registerBenefit1" => "Support",
+    "registerBenefit2" => "Note de service",
+    "registerBenefit3" => "Emplacements",
+
+// Form Fields
+    "registerName" => "Prénom",
+    "registerNamePlaceholder" => "Votre prénom",
+    "registerLastName" => "Nom de famille",
+    "registerLastNamePlaceholder" => "Votre nom de famille",
+    "registerPhone" => "Numéro de téléphone",
+    "registerPhonePlaceholder" => "Votre numéro de téléphone",
+    "registerEmail" => "Adresse email",
+    "registerEmailPlaceholder" => "Votre adresse email",
+    "registerPassword" => "Mot de passe",
+    "registerPasswordPlaceholder" => "Créez un mot de passe",
+    "registerConfirmPassword" => "Confirmez le mot de passe",
+    "registerConfirmPasswordPlaceholder" => "Confirmez votre mot de passe",
+
+// Buttons & Links
+    "registerButton" => "S'inscrire",
+    "registerProcessing" => "Création du compte...",
+    "registerLoginLink" => "Vous avez déjà un compte? Connectez-vous ici"
    
 
 
