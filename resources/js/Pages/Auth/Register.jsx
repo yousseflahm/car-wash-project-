@@ -150,14 +150,14 @@ export default function Register() {
                     className="w-full max-w-md"
                 >
                     <h2 className="text-3xl font-bold text-blue-600 text-center">
-                        {t.registerTitle || "Create Your Account"}
+                        {t.registerTitle }
                     </h2>
 
                     <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                         {/* Name */}
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                                {t.registerName || "First Name"}
+                                {t.registerName }
                             </label>
                             <input
                                 id="name"
@@ -165,7 +165,7 @@ export default function Register() {
                                 name="name"
                                 value={data.name}
                                 onChange={(e) => setData("name", e.target.value)}
-                                placeholder={t.registerNamePlaceholder || "Your first name"}
+                                placeholder={t.registerNamePlaceholder }
                                 className="mt-1 w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-blue-500"
                                 required
                             />
@@ -175,7 +175,7 @@ export default function Register() {
                         {/* Last Name */}
                         <div>
                             <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-                                {t.registerLastName || "Last Name"}
+                                {t.registerLastName }
                             </label>
                             <input
                                 id="lastName"
@@ -183,7 +183,7 @@ export default function Register() {
                                 name="lastName"
                                 value={data.lastName}
                                 onChange={(e) => setData("lastName", e.target.value)}
-                                placeholder={t.registerLastNamePlaceholder || "Your last name"}
+                                placeholder={t.registerLastNamePlaceholder }
                                 className="mt-1 w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-blue-500"
                                 required
                             />
@@ -193,7 +193,7 @@ export default function Register() {
                         {/* Phone */}
                         <div>
                             <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                                {t.registerPhone || "Phone Number"}
+                                {t.registerPhone }
                             </label>
                             <input
                                 id="phone"
@@ -201,7 +201,7 @@ export default function Register() {
                                 name="phone"
                                 value={data.phone}
                                 onChange={(e) => setData("phone", e.target.value)}
-                                placeholder={t.registerPhonePlaceholder || "Your phone number"}
+                                placeholder={t.registerPhonePlaceholder }
                                 className="mt-1 w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-blue-500"
                                 required
                             />
@@ -211,7 +211,7 @@ export default function Register() {
                         {/* Email */}
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                                {t.registerEmail || "Email Address"}
+                                {t.registerEmail }
                             </label>
                             <input
                                 id="email"
@@ -219,7 +219,7 @@ export default function Register() {
                                 name="email"
                                 value={data.email}
                                 onChange={(e) => setData("email", e.target.value)}
-                                placeholder={t.registerEmailPlaceholder || "Your email address"}
+                                placeholder={t.registerEmailPlaceholder }
                                 className="mt-1 w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-blue-500"
                                 required
                             />
@@ -229,7 +229,7 @@ export default function Register() {
                         {/* Password */}
                         <div>
                             <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                                {t.registerPassword || "Password"}
+                                {t.registerPassword }
                             </label>
                             <input
                                 id="password"
@@ -237,7 +237,7 @@ export default function Register() {
                                 name="password"
                                 value={data.password}
                                 onChange={(e) => setData("password", e.target.value)}
-                                placeholder={t.registerPasswordPlaceholder || "Create a password"}
+                                placeholder={t.registerPasswordPlaceholder }
                                 className="mt-1 w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-blue-500"
                                 required
                             />
@@ -247,7 +247,7 @@ export default function Register() {
                         {/* Confirm Password */}
                         <div>
                             <label htmlFor="password_confirmation" className="block text-sm font-medium text-gray-700">
-                                {t.registerConfirmPassword || "Confirm Password"}
+                                {t.registerConfirmPassword }
                             </label>
                             <input
                                 id="password_confirmation"
@@ -255,7 +255,7 @@ export default function Register() {
                                 name="password_confirmation"
                                 value={data.password_confirmation}
                                 onChange={(e) => setData("password_confirmation", e.target.value)}
-                                placeholder={t.registerConfirmPasswordPlaceholder || "Confirm your password"}
+                                placeholder={t.registerConfirmPasswordPlaceholder }
                                 className="mt-1 w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-blue-500"
                                 required
                             />
@@ -267,14 +267,14 @@ export default function Register() {
                                 disabled={processing}
                                 className="px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             >
-                                {processing ? (t.registerProcessing || "Creating account...") : (t.registerButton || "Sign Up")}
+                                {processing ? (t.registerProcessing ) : (t.registerButton )}
                             </button>
                         </div>
                     </form>
 
                     <div className="mt-6 text-center">
                         <Link href='login' className="text-sm text-blue-600 hover:underline">
-                            {t.registerLoginLink || "Already have an account? Log in here"}
+                            {t.registerLoginLink }
                         </Link>
                     </div>
                 </motion.div>
