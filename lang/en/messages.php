@@ -174,6 +174,64 @@ return [
     "registerLoginLink" => "Already have an account? Log in here", // "Vous avez déjà un compte? Connectez-vous ici"
 
 
+               // Washer Login Page - English Translations
+"washerLoginTitle" => "Log in to your account",
+"washerJoinTeam" => "Join Our Team!",
+"washerTeamDescription1" => "We're looking for passionate and dedicated individuals to join our team and help deliver excellent car wash and detailing services to our customers.",
+"washerTeamDescription2" => "If you're ready to work in a dynamic environment and grow your career, we want to hear from you!",
+"washerCareerGrowth" => "Career Growth",
+"washerGrowthOpportunities" => "Opportunities to Advance",
+"washerTeamwork" => "Teamwork",
+"washerCollaborativeEnv" => "Collaborative Environment",
+"washerCompetitivePay" => "Competitive Pay",
+"washerFairCompensation" => "Fair Compensation",
+"washerApplyNow" => "Ready to apply? Click here to get started",
+"washerHappyClients" => "Happy Clients",
+"washerCustomersRating" => "Customer Ratings",
+"washerSatisfiedGuarantee" => "Satisfaction Guaranteed",
+
+// Form Fields
+"washerEmail" => "Email",
+"washerEmailPlaceholder" => "Enter your email",
+"washerPassword" => "Password",
+"washerPasswordPlaceholder" => "Enter your password",
+"washerRememberMe" => "Remember me",
+"washerForgotPassword" => "Forgot your password?",
+
+// Buttons & Links
+"washerLoginButton" => "Log in",
+"washerLoggingIn" => "Logging in...",
+"washerSignupLink" => "Don't have an account? Sign up here" , 
+   
+   // Washer Registration Page
+"washerRegisterTitle" => "Create an Account",
+"washerJoinTeam" => "Join Our Team!",
+"washerRegisterSubtitle1" => "Be part of a dedicated and professional team that delivers top-quality services to our customers.",
+"washerRegisterSubtitle2" => "We offer competitive salaries, career development, and the opportunity to make a real impact.",
+
+// Form Fields
+"washerName" => "First Name",
+"washerNamePlaceholder" => "Enter your first name",
+"washerLastName" => "Last Name",
+"washerLastNamePlaceholder" => "Enter your last name",
+"washerPhone" => "Phone",
+"washerPhonePlaceholder" => "Enter your phone number",
+"washerAddress" => "Address",
+"washerAddressPlaceholder" => "Enter your address",
+"washerEmail" => "Email",
+"washerEmailPlaceholder" => "Enter your email",
+"washerPassword" => "Password",
+"washerPasswordPlaceholder" => "Create a password",
+"washerConfirmPassword" => "Confirm Password",
+"washerConfirmPasswordPlaceholder" => "Confirm your password",
+
+// Buttons & Links
+"washerSignUpButton" => "Sign Up",
+"washerSigningUp" => "Signing up...",
+"washerLoginLink" => "Already have an account? Log in here", 
+
+
+
 
 
 ] ; 

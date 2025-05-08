@@ -155,7 +155,64 @@ return [
 // Buttons & Links
     "registerButton" => "S'inscrire",
     "registerProcessing" => "Création du compte...",
-    "registerLoginLink" => "Vous avez déjà un compte? Connectez-vous ici"
+    "registerLoginLink" => "Vous avez déjà un compte? Connectez-vous ici" , 
+
+        // Washer Login Page - French Translations
+"washerLoginTitle" => "Connectez-vous à votre compte",
+"washerJoinTeam" => "Rejoignez notre équipe !",
+"washerTeamDescription1" => "Nous recherchons des personnes passionnées et dévouées pour rejoindre notre équipe et fournir d'excellents services de lavage et de detailing à nos clients.",
+"washerTeamDescription2" => "Si vous êtes prêt à travailler dans un environnement dynamique et à faire progresser votre carrière, nous voulons vous rencontrer !",
+"washerCareerGrowth" => "Évolution professionnelle",
+"washerGrowthOpportunities" => "Opportunités d'avancement",
+"washerTeamwork" => "Travail d'équipe",
+"washerCollaborativeEnv" => "Environnement collaboratif",
+"washerCompetitivePay" => "Salaire compétitif",
+"washerFairCompensation" => "Rémunération équitable",
+"washerApplyNow" => "Prêt à postuler? Cliquez ici pour commencer",
+"washerHappyClients" => "Clients satisfaits",
+"washerCustomersRating" => "Avis clients",
+"washerSatisfiedGuarantee" => "Satisfaction garantie",
+
+// Form Fields
+"washerEmail" => "Email",
+"washerEmailPlaceholder" => "Entrez votre email",
+"washerPassword" => "Mot de passe",
+"washerPasswordPlaceholder" => "Entrez votre mot de passe",
+"washerRememberMe" => "Se souvenir de moi",
+"washerForgotPassword" => "Mot de passe oublié ?",
+
+// Buttons & Links
+"washerLoginButton" => "Se connecter",
+"washerLoggingIn" => "Connexion en cours...",
+"washerSignupLink" => "Vous n'avez pas de compte? Inscrivez-vous ici" , 
+
+
+                        // Washer Registration Page
+"washerRegisterTitle" => "Créer un compte",
+"washerJoinTeam" => "Rejoignez notre équipe !",
+"washerRegisterSubtitle1" => "Faites partie d'une équipe dévouée et professionnelle qui fournit des services de qualité supérieure à nos clients.",
+"washerRegisterSubtitle2" => "Nous offrons des salaires compétitifs, un développement de carrière et l'opportunité de faire une réelle différence.",
+
+// Form Fields
+"washerName" => "Prénom",
+"washerNamePlaceholder" => "Entrez votre prénom",
+"washerLastName" => "Nom de famille",
+"washerLastNamePlaceholder" => "Entrez votre nom de famille",
+"washerPhone" => "Téléphone",
+"washerPhonePlaceholder" => "Entrez votre numéro de téléphone",
+"washerAddress" => "Adresse",
+"washerAddressPlaceholder" => "Entrez votre adresse",
+"washerEmail" => "Email",
+"washerEmailPlaceholder" => "Entrez votre email",
+"washerPassword" => "Mot de passe",
+"washerPasswordPlaceholder" => "Créez un mot de passe",
+"washerConfirmPassword" => "Confirmez le mot de passe",
+"washerConfirmPasswordPlaceholder" => "Confirmez votre mot de passe",
+
+// Buttons & Links
+"washerSignUpButton" => "S'inscrire",
+"washerSigningUp" => "Inscription en cours...",
+"washerLoginLink" => "Vous avez déjà un compte? Connectez-vous ici"
    
 
 
