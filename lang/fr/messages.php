@@ -212,7 +212,34 @@ return [
 // Buttons & Links
 "washerSignUpButton" => "S'inscrire",
 "washerSigningUp" => "Inscription en cours...",
-"washerLoginLink" => "Vous avez déjà un compte? Connectez-vous ici"
+"washerLoginLink" => "Vous avez déjà un compte? Connectez-vous ici" , 
+
+
+
+// Admin Login Page
+"adminLoginTitle" => "Connexion Admin",
+"adminWelcomeTitle" => "Bienvenue, Administrateur !",
+"adminWelcomeSubtitle1" => "Gérez votre système avec facilité et efficacité. Connectez-vous pour accéder au tableau de bord d'administration.",
+
+// Features
+"adminFeature1" => "Efficacité",
+"adminFeature1Sub" => "Opérations rationalisées",
+"adminFeature2" => "Contrôle",
+"adminFeature2Sub" => "Accès complet au système",
+"adminFeature3" => "Sécurité",
+"adminFeature3Sub" => "Accès protégé",
+
+// Form Fields
+"adminEmail" => "Email",
+"adminEmailPlaceholder" => "Entrez votre email",
+"adminPassword" => "Mot de passe",
+"adminPasswordPlaceholder" => "Entrez votre mot de passe",
+"adminRememberMe" => "Se souvenir de moi",
+"adminForgotPassword" => "Mot de passe oublié ?",
+
+// Buttons & Links
+"adminLoginButton" => "Se connecter",
+"adminLoggingIn" => "Connexion en cours..."
    
 
 

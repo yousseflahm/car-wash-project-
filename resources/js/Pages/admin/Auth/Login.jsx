@@ -1,5 +1,6 @@
-import { Head, Link, useForm } from "@inertiajs/react";
+import { Head, Link, useForm, usePage } from "@inertiajs/react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors } = useForm({
@@ -8,39 +9,87 @@ export default function Login({ status, canResetPassword }) {
         remember: false,
     });
 
+    const [languageDropdownVisible, setLanguageDropdownVisible] = useState(false);
+    const { translations } = usePage().props;
+    const t = translations.messages;
+
+    const toggleLanguageDropdown = () => {
+        setLanguageDropdownVisible(!languageDropdownVisible);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         post(route("admin.login"));
     };
 
     return (
-        <div className="flex min-h-screen font-kanit">
-            <Head title="Log in" />
+        <div className="relative flex min-h-screen font-kanit">
+            <Head title={t.adminLoginTitle} />
 
-            {/* Left Section: Image (Hidden on Small Screens) */}
+            {/* Language Switcher */}
+            <div className="absolute top-4 right-4 md:top-6 md:right-6 z-50">
+                <div className="relative">
+                    <button
+                        onClick={toggleLanguageDropdown}
+                        className="flex items-center justify-center w-16 h-10 rounded-lg transition duration-200 border border-gray-200"
+                    >
+                        <span className="text-sm pl-2 font-medium">EN/FR</span>
+                        <img
+                            src="/fleche.svg"
+                            alt="arrow"
+                            className={`h-3 ml-2 transform transition-transform duration-200 ${
+                                languageDropdownVisible ? "-rotate-180" : "rotate-0"
+                            }`}
+                        />
+                    </button>
+
+                    {languageDropdownVisible && (
+                        <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                            <div className="flex justify-end p-2">
+                                <button onClick={toggleLanguageDropdown}>
+                                    <img src="/close.svg" alt="close" className="h-3 w-3" />
+                                </button>
+                            </div>
+                            <a
+                                href={route("lang.switch", ["en"])}
+                                onClick={toggleLanguageDropdown}
+                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                            >
+                                English
+                            </a>
+                            <a
+                                href={route("lang.switch", ["fr"])}
+                                onClick={toggleLanguageDropdown}
+                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                            >
+                                Français
+                            </a>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Left Section: Image */}
             <div className="hidden lg:flex w-1/2 bg-[url('/washerAccPic/pc2.jpg')] bg-cover bg-center">
                 <div className="h-full w-full bg-blue-400 bg-opacity-50 flex flex-col items-center justify-center text-white text-center p-8">
-                    {/* Animated Heading */}
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                         className="text-4xl font-bold"
                     >
-                        Welcome Back, Admin!
+                        {t.adminWelcomeTitle}
                     </motion.h2>
 
-                    {/* Animated Paragraphs */}
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.3 }}
                         className="mt-4 text-lg max-w-md"
                     >
-                        Manage your system with ease and efficiency. Log in to access the admin dashboard and oversee operations.
+                        {t.adminWelcomeSubtitle1}
                     </motion.p>
 
-                    {/* Animated Stats */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -53,8 +102,8 @@ export default function Login({ status, canResetPassword }) {
                             transition={{ duration: 1, delay: 1 }}
                             className="text-center"
                         >
-                            <h3 className="text-3xl font-bold">Efficiency</h3>
-                            <p className="text-sm">Streamlined Operations</p>
+                            <h3 className="text-3xl font-bold">{t.adminFeature1}</h3>
+                            <p className="text-sm">{t.adminFeature1Sub}</p>
                         </motion.div>
 
                         <motion.div
@@ -63,8 +112,8 @@ export default function Login({ status, canResetPassword }) {
                             transition={{ duration: 1, delay: 1.2 }}
                             className="text-center"
                         >
-                            <h3 className="text-3xl font-bold">Control</h3>
-                            <p className="text-sm">Full System Access</p>
+                            <h3 className="text-3xl font-bold">{t.adminFeature2}</h3>
+                            <p className="text-sm">{t.adminFeature2Sub}</p>
                         </motion.div>
 
                         <motion.div
@@ -73,8 +122,8 @@ export default function Login({ status, canResetPassword }) {
                             transition={{ duration: 1, delay: 1.4 }}
                             className="text-center"
                         >
-                            <h3 className="text-3xl font-bold">Security</h3>
-                            <p className="text-sm">Protected Access</p>
+                            <h3 className="text-3xl font-bold">{t.adminFeature3}</h3>
+                            <p className="text-sm">{t.adminFeature3Sub}</p>
                         </motion.div>
                     </motion.div>
                 </div>
@@ -89,7 +138,7 @@ export default function Login({ status, canResetPassword }) {
                     className="w-full max-w-md"
                 >
                     <h2 className="text-3xl font-bold text-blue-600 text-center">
-                        Admin Log in
+                        {t.adminLoginTitle}
                     </h2>
 
                     {status && (
@@ -105,18 +154,17 @@ export default function Login({ status, canResetPassword }) {
                                 htmlFor="email"
                                 className="block text-sm font-medium text-gray-700"
                             >
-                                Email
+                                {t.adminEmail}
                             </label>
                             <input
                                 id="email"
                                 type="email"
                                 name="email"
                                 value={data.email}
-                                onChange={(e) =>
-                                    setData("email", e.target.value)
-                                }
-                                placeholder="Enter your email"
+                                onChange={(e) => setData("email", e.target.value)}
+                                placeholder={t.adminEmailPlaceholder}
                                 className="mt-1 w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-blue-500"
+                                required
                             />
                             {errors.email && (
                                 <p className="mt-1 text-sm text-red-600">
@@ -131,18 +179,17 @@ export default function Login({ status, canResetPassword }) {
                                 htmlFor="password"
                                 className="block text-sm font-medium text-gray-700"
                             >
-                                Password
+                                {t.adminPassword}
                             </label>
                             <input
                                 id="password"
                                 type="password"
                                 name="password"
                                 value={data.password}
-                                onChange={(e) =>
-                                    setData("password", e.target.value)
-                                }
-                                placeholder="Enter your password"
+                                onChange={(e) => setData("password", e.target.value)}
+                                placeholder={t.adminPasswordPlaceholder}
                                 className="mt-1 w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-blue-500"
+                                required
                             />
                             {errors.password && (
                                 <p className="mt-1 text-sm text-red-600">
@@ -158,27 +205,24 @@ export default function Login({ status, canResetPassword }) {
                                 type="checkbox"
                                 name="remember"
                                 checked={data.remember}
-                                onChange={(e) =>
-                                    setData("remember", e.target.checked)
-                                }
+                                onChange={(e) => setData("remember", e.target.checked)}
                                 className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                             />
                             <label
                                 htmlFor="remember"
                                 className="ml-2 text-sm text-gray-700"
                             >
-                                Remember me
+                                {t.adminRememberMe}
                             </label>
                         </div>
 
-                        {/* Actions */}
                         <div className="flex justify-between items-center mt-4">
                             {canResetPassword && (
                                 <Link
                                     href={route("password.request")}
                                     className="text-sm text-blue-600 hover:underline"
                                 >
-                                    Forgot your password?
+                                    {t.adminForgotPassword}
                                 </Link>
                             )}
                             <button
@@ -186,7 +230,7 @@ export default function Login({ status, canResetPassword }) {
                                 disabled={processing}
                                 className="px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             >
-                                {processing ? "Logging in..." : "Log in"}
+                                {processing ? t.adminLoggingIn : t.adminLoginButton}
                             </button>
                         </div>
                     </form>

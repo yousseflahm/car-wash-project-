@@ -231,6 +231,32 @@ return [
 "washerLoginLink" => "Already have an account? Log in here", 
 
 
+// Admin Login Page
+"adminLoginTitle" => "Admin Log in",
+"adminWelcomeTitle" => "Welcome Back, Admin!",
+"adminWelcomeSubtitle1" => "Manage your system with ease and efficiency. Log in to access the admin dashboard.",
+
+// Features
+"adminFeature1" => "Efficiency",
+"adminFeature1Sub" => "Streamlined Operations",
+"adminFeature2" => "Control",
+"adminFeature2Sub" => "Full System Access",
+"adminFeature3" => "Security",
+"adminFeature3Sub" => "Protected Access",
+
+// Form Fields
+"adminEmail" => "Email",
+"adminEmailPlaceholder" => "Enter your email",
+"adminPassword" => "Password",
+"adminPasswordPlaceholder" => "Enter your password",
+"adminRememberMe" => "Remember me",
+"adminForgotPassword" => "Forgot your password?",
+
+// Buttons & Links
+"adminLoginButton" => "Log in",
+"adminLoggingIn" => "Logging in..."
+
+
 
 
 
