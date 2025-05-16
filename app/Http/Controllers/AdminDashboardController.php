@@ -15,10 +15,13 @@ class AdminDashboardController extends Controller
     {
        // Call the procedure to get total revenue
         $totalRevenueResult = DB::select('call getTotalRevenue()');
+       
         $totalRevenue = $totalRevenueResult[0]->TotalRevenue  ?? 0;
+        
 
         // Call the procedure to get today's revenue
         $todayRevenueResult = DB::select('call get_today_revenue()');
+     
         $todayRevenue = $todayRevenueResult[0]->TodayRevenue ?? 0;
          
         //  Get the total number of users
