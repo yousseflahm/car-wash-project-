@@ -146,115 +146,115 @@ return [
 
 
     // Registration Page
-    "registerTitle" => "Create Your Account", // "Créez votre compte"
-    "registerHeadline" => "Begin Your Journey With Us", // "Commencez votre voyage avec nous"
-    "registerSubtitle1" => "Join our growing family of car enthusiasts", // "Rejoignez notre famille grandissante d'amateurs de voitures"
-    "registerSubtitle2" => "premium automotive care services tailored just for you", // "services de soins automobiles premium conçus pour vous"
-    "registerBenefit1" => "Support", // "Support"
-    "registerBenefit2" => "Service Rating", // "Note de service"
-    "registerBenefit3" => "Locations", // "Emplacements"
+    "registerTitle" => "Create Your Account", 
+    "registerHeadline" => "Begin Your Journey With Us", 
+    "registerSubtitle1" => "Join our growing family of car enthusiasts", 
+    "registerSubtitle2" => "premium automotive care services tailored just for you", 
+    "registerBenefit1" => "Support", 
+    "registerBenefit2" => "Service Rating", 
+    "registerBenefit3" => "Locations",
 
-// Form Fields
-    "registerName" => "First Name", // "Prénom"
-    "registerNamePlaceholder" => "Your first name", // "Votre prénom"
-    "registerLastName" => "Last Name", // "Nom de famille"
-    "registerLastNamePlaceholder" => "Your last name", // "Votre nom de famille"
-    "registerPhone" => "Phone Number", // "Numéro de téléphone"
-    "registerPhonePlaceholder" => "Your phone number", // "Votre numéro de téléphone"
-    "registerEmail" => "Email Address", // "Adresse email"
-    "registerEmailPlaceholder" => "Your email address", // "Votre adresse email"
-    "registerPassword" => "Password", // "Mot de passe"
-    "registerPasswordPlaceholder" => "Create a password", // "Créez un mot de passe"
-    "registerConfirmPassword" => "Confirm Password", // "Confirmez le mot de passe"
-    "registerConfirmPasswordPlaceholder" => "Confirm your password", // "Confirmez votre mot de passe"
+    // Form Fields
+    "registerName" => "First Name", 
+    "registerNamePlaceholder" => "Your first name", 
+    "registerLastName" => "Last Name", 
+    "registerLastNamePlaceholder" => "Your last name", 
+    "registerPhone" => "Phone Number", 
+    "registerPhonePlaceholder" => "Your phone number", 
+    "registerEmail" => "Email Address", 
+    "registerEmailPlaceholder" => "Your email address", 
+    "registerPassword" => "Password", 
+    "registerPasswordPlaceholder" => "Create a password", 
+    "registerConfirmPassword" => "Confirm Password", 
+    "registerConfirmPasswordPlaceholder" => "Confirm your password", 
 
-// Buttons & Links
-    "registerButton" => "Sign Up", // "S'inscrire"
-    "registerProcessing" => "Creating account...", // "Création du compte..."
-    "registerLoginLink" => "Already have an account? Log in here", // "Vous avez déjà un compte? Connectez-vous ici"
+    // Buttons & Links
+    "registerButton" => "Sign Up", 
+    "registerProcessing" => "Creating account...", 
+    "registerLoginLink" => "Already have an account? Log in here", 
 
 
-               // Washer Login Page - English Translations
-"washerLoginTitle" => "Log in to your account",
-"washerJoinTeam" => "Join Our Team!",
-"washerTeamDescription1" => "We're looking for passionate and dedicated individuals to join our team and help deliver excellent car wash and detailing services to our customers.",
-"washerTeamDescription2" => "If you're ready to work in a dynamic environment and grow your career, we want to hear from you!",
-"washerCareerGrowth" => "Career Growth",
-"washerGrowthOpportunities" => "Opportunities to Advance",
-"washerTeamwork" => "Teamwork",
-"washerCollaborativeEnv" => "Collaborative Environment",
-"washerCompetitivePay" => "Competitive Pay",
-"washerFairCompensation" => "Fair Compensation",
-"washerApplyNow" => "Ready to apply? Click here to get started",
-"washerHappyClients" => "Happy Clients",
-"washerCustomersRating" => "Customer Ratings",
-"washerSatisfiedGuarantee" => "Satisfaction Guaranteed",
+    // Washer Login Page - English Translations
+     "washerLoginTitle" => "Log in to your account",
+     "washerJoinTeam" => "Join Our Team!",
+     "washerTeamDescription1" => "We're looking for passionate and dedicated individuals to join our team and help deliver excellent car wash and detailing services to our customers.",
+     "washerTeamDescription2" => "If you're ready to work in a dynamic environment and grow your career, we want to hear from you!",
+     "washerCareerGrowth" => "Career Growth",
+     "washerGrowthOpportunities" => "Opportunities to Advance",
+     "washerTeamwork" => "Teamwork",
+     "washerCollaborativeEnv" => "Collaborative Environment",
+     "washerCompetitivePay" => "Competitive Pay",
+     "washerFairCompensation" => "Fair Compensation",
+     "washerApplyNow" => "Ready to apply? Click here to get started",
+     "washerHappyClients" => "Happy Clients",
+     "washerCustomersRating" => "Customer Ratings",
+     "washerSatisfiedGuarantee" => "Satisfaction Guaranteed",
 
-// Form Fields
-"washerEmail" => "Email",
-"washerEmailPlaceholder" => "Enter your email",
-"washerPassword" => "Password",
-"washerPasswordPlaceholder" => "Enter your password",
-"washerRememberMe" => "Remember me",
-"washerForgotPassword" => "Forgot your password?",
+     // Form Fields
+     "washerEmail" => "Email",
+     "washerEmailPlaceholder" => "Enter your email",
+     "washerPassword" => "Password",
+     "washerPasswordPlaceholder" => "Enter your password",
+     "washerRememberMe" => "Remember me",
+     "washerForgotPassword" => "Forgot your password?",
 
-// Buttons & Links
-"washerLoginButton" => "Log in",
-"washerLoggingIn" => "Logging in...",
-"washerSignupLink" => "Don't have an account? Sign up here" , 
+     // Buttons & Links
+     "washerLoginButton" => "Log in",
+     "washerLoggingIn" => "Logging in...",
+     "washerSignupLink" => "Don't have an account? Sign up here" , 
    
-   // Washer Registration Page
-"washerRegisterTitle" => "Create an Account",
-"washerJoinTeam" => "Join Our Team!",
-"washerRegisterSubtitle1" => "Be part of a dedicated and professional team that delivers top-quality services to our customers.",
-"washerRegisterSubtitle2" => "We offer competitive salaries, career development, and the opportunity to make a real impact.",
+    // Washer Registration Page
+     "washerRegisterTitle" => "Create an Account",
+     "washerJoinTeam" => "Join Our Team!",
+     "washerRegisterSubtitle1" => "Be part of a dedicated and professional team that delivers top-quality services to our customers.",
+     "washerRegisterSubtitle2" => "We offer competitive salaries, career development, and the opportunity to make a real impact.",
 
-// Form Fields
-"washerName" => "First Name",
-"washerNamePlaceholder" => "Enter your first name",
-"washerLastName" => "Last Name",
-"washerLastNamePlaceholder" => "Enter your last name",
-"washerPhone" => "Phone",
-"washerPhonePlaceholder" => "Enter your phone number",
-"washerAddress" => "Address",
-"washerAddressPlaceholder" => "Enter your address",
-"washerEmail" => "Email",
-"washerEmailPlaceholder" => "Enter your email",
-"washerPassword" => "Password",
-"washerPasswordPlaceholder" => "Create a password",
-"washerConfirmPassword" => "Confirm Password",
-"washerConfirmPasswordPlaceholder" => "Confirm your password",
+    // Form Fields
+     "washerName" => "First Name",
+     "washerNamePlaceholder" => "Enter your first name",
+     "washerLastName" => "Last Name",
+     "washerLastNamePlaceholder" => "Enter your last name",
+     "washerPhone" => "Phone",
+     "washerPhonePlaceholder" => "Enter your phone number",
+     "washerAddress" => "Address",
+     "washerAddressPlaceholder" => "Enter your address",
+     "washerEmail" => "Email",
+     "washerEmailPlaceholder" => "Enter your email",
+     "washerPassword" => "Password",
+     "washerPasswordPlaceholder" => "Create a password",
+     "washerConfirmPassword" => "Confirm Password",
+     "washerConfirmPasswordPlaceholder" => "Confirm your password",
 
-// Buttons & Links
-"washerSignUpButton" => "Sign Up",
-"washerSigningUp" => "Signing up...",
-"washerLoginLink" => "Already have an account? Log in here", 
+     // Buttons & Links
+     "washerSignUpButton" => "Sign Up",
+     "washerSigningUp" => "Signing up...",
+     "washerLoginLink" => "Already have an account? Log in here", 
 
 
-// Admin Login Page
-"adminLoginTitle" => "Admin Log in",
-"adminWelcomeTitle" => "Welcome Back, Admin!",
-"adminWelcomeSubtitle1" => "Manage your system with ease and efficiency. Log in to access the admin dashboard.",
+    // Admin Login Page
+     "adminLoginTitle" => "Admin Log in",
+     "adminWelcomeTitle" => "Welcome Back, Admin!",
+     "adminWelcomeSubtitle1" => "Manage your system with ease and efficiency. Log in to access the admin dashboard.",
 
-// Features
-"adminFeature1" => "Efficiency",
-"adminFeature1Sub" => "Streamlined Operations",
-"adminFeature2" => "Control",
-"adminFeature2Sub" => "Full System Access",
-"adminFeature3" => "Security",
-"adminFeature3Sub" => "Protected Access",
+    // Features
+     "adminFeature1" => "Efficiency",
+     "adminFeature1Sub" => "Streamlined Operations",
+     "adminFeature2" => "Control",
+     "adminFeature2Sub" => "Full System Access",
+     "adminFeature3" => "Security",
+     "adminFeature3Sub" => "Protected Access",
 
-// Form Fields
-"adminEmail" => "Email",
-"adminEmailPlaceholder" => "Enter your email",
-"adminPassword" => "Password",
-"adminPasswordPlaceholder" => "Enter your password",
-"adminRememberMe" => "Remember me",
-"adminForgotPassword" => "Forgot your password?",
+    // Form Fields
+     "adminEmail" => "Email",
+     "adminEmailPlaceholder" => "Enter your email",
+     "adminPassword" => "Password",
+     "adminPasswordPlaceholder" => "Enter your password",
+     "adminRememberMe" => "Remember me",
+     "adminForgotPassword" => "Forgot your password?",
 
-// Buttons & Links
-"adminLoginButton" => "Log in",
-"adminLoggingIn" => "Logging in..."
+   // Buttons & Links
+     "adminLoginButton" => "Log in",
+     "adminLoggingIn" => "Logging in..."
 
 
 
