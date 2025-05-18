@@ -11,6 +11,8 @@ export default function UpdateProfileInformation({
     className = '',
 }) {
     const user = usePage().props.auth.user;
+    const { translations } = usePage().props;
+    const t = translations.messages;
 
     const { data, setData, patch, errors, processing, recentlySuccessful } =
         useForm({
@@ -32,17 +34,17 @@ export default function UpdateProfileInformation({
         <section className={className}>
             <header>
                 <h2 className="text-lg font-medium text-gray-900">
-                    Profile Information
+                    {t.profileInfo}
                 </h2>
 
                 <p className="mt-1 text-sm text-gray-600">
-                    Update your account's profile information and email address.
+                   {t.profileInfoText}
                 </p>
             </header>
 
             <form onSubmit={submit} className="mt-6 space-y-6">
                 <div>
-                    <InputLabel htmlFor="name" value="Name" />
+                    <InputLabel htmlFor="name" value={t.name} />
 
                     <TextInput
                         id="name"
@@ -58,7 +60,7 @@ export default function UpdateProfileInformation({
                 </div>
 
                 <div>
-                    <InputLabel htmlFor="lastName" value="lastName" />
+                    <InputLabel htmlFor="lastName" value={t.washerLastName} />
 
                     <TextInput
                         id="lastName"
@@ -73,7 +75,7 @@ export default function UpdateProfileInformation({
                     <InputError className="mt-2" message={errors.lastName} />
                 </div>
                 <div>
-                    <InputLabel htmlFor="address" value="address" />
+                    <InputLabel htmlFor="address" value={t.address} />
 
                     <TextInput
                         id="address"
@@ -88,7 +90,7 @@ export default function UpdateProfileInformation({
                     <InputError className="mt-2" message={errors.address} />
                 </div>
                 <div>
-                    <InputLabel htmlFor="phone" value="phone" />
+                    <InputLabel htmlFor="phone" value={t.registerPhone} />
 
                     <TextInput
                         id="phone"
@@ -103,7 +105,7 @@ export default function UpdateProfileInformation({
                     <InputError className="mt-2" message={errors.phone} />
                 </div>
                 <div>
-                    <InputLabel htmlFor="email" value="Email" />
+                    <InputLabel htmlFor="email" value={t.email} />
 
                     <TextInput
                         id="email"
@@ -142,7 +144,7 @@ export default function UpdateProfileInformation({
                 )}
 
                 <div className="flex items-center gap-4">
-                    <PrimaryButton disabled={processing}>Save</PrimaryButton>
+                    <PrimaryButton disabled={processing}>{t.save}</PrimaryButton>
 
                     <Transition
                         show={recentlySuccessful}
@@ -152,7 +154,7 @@ export default function UpdateProfileInformation({
                         leaveTo="opacity-0"
                     >
                         <p className="text-sm text-gray-600">
-                            Saved.
+                            {t.saved}
                         </p>
                     </Transition>
                 </div>

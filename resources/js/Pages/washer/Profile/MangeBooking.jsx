@@ -4,6 +4,8 @@ import WasherAuthentificatedLayout from "@/Layouts/WasherLayout";
 
 export default function WasherBookings({ bookings }) {
     const [statusUpdates, setStatusUpdates] = useState({});
+    const { translations } = usePage().props;
+    const t = translations.messages;
     const { flash } = usePage().props; // Access flash messages
     console.log(flash)
     // Handle status change
@@ -45,7 +47,7 @@ export default function WasherBookings({ bookings }) {
     return (
         <WasherAuthentificatedLayout>
             <Head title="Washer Bookings" />
-            <h1 className="text-2xl font-bold mb-4">Your Bookings</h1>
+            <h1 className="text-2xl font-bold mb-4">{t.reservation}</h1>
 
             {/* Flash Messages */}
             {flash.success && (
@@ -65,25 +67,25 @@ export default function WasherBookings({ bookings }) {
                         <thead>
                             <tr className="bg-gray-100">
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
-                                    Car
+                                    {t.carName}
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
-                                    Customer Name
+                                    {t.customerName}
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
-                                    Date
+                                    {t.date}
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
-                                    Total Price
+                                    {t.totalPrice}
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
-                                    Status
+                                    {t.status}
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
-                                    Services
+                                    {t.services}
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
-                                    Actions
+                                    {t.action}
                                 </th>
                             </tr>
                         </thead>
@@ -140,7 +142,7 @@ export default function WasherBookings({ bookings }) {
                                             onClick={() => handleUpdateStatus(booking.id_booking)}
                                             className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
                                         >
-                                            Update
+                                            {t.update}
                                         </button>
                                     </td>
                                 </tr>
@@ -149,7 +151,7 @@ export default function WasherBookings({ bookings }) {
                     </table>
                 </div>
             ) : (
-                <p className="text-gray-600">No bookings assigned to you.</p>
+                <p className="text-gray-600">{t.noReservation}</p>
             )}
         </WasherAuthentificatedLayout>
     );

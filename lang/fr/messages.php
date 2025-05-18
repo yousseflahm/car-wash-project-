@@ -349,6 +349,14 @@ return [
     "PendingBookings" => "Réservations en attente",
     "CompletedBookings" => "Réservations terminées",
 
+    // Page de gestion des réservations
+
+    "customerName" => "Nom du client",
+    "noReservation" => "Aucune réservation ne vous a été attribuée.",
+
+     "address" => "Adresse",
+
+
 
 
 

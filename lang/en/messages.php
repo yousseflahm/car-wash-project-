@@ -367,6 +367,12 @@ return [
     "PendingBookings" => "Pending Bookings",
     "CompletedBookings" => "Completed Bookings",
 
+    // manage reservation page
+
+    "customerName" => "Customer Name",
+    "noReservation" => "No bookings assigned to you.",
+    "address" => "Address",
+
     
 
     

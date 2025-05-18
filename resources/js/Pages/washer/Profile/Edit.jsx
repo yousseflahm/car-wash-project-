@@ -1,4 +1,4 @@
-import { Head } from "@inertiajs/react";
+import { Head  , usePage} from "@inertiajs/react";
 import { useState } from "react"; // Import useState
 
 import DeleteUserForm from "./Partials/DeleteUserForm";
@@ -9,6 +9,8 @@ import WasherAuthentificatedLayout from "@/Layouts/WasherLayout";
 export default function Edit({ mustVerifyEmail, status }) {
     // State to track the active tab
     const [activeTab, setActiveTab] = useState("info");
+    const { translations } = usePage().props;
+    const t = translations.messages;
 
     return (
         <WasherAuthentificatedLayout>
@@ -27,7 +29,7 @@ export default function Edit({ mustVerifyEmail, status }) {
                                         : "text-gray-700 bg-gray-100 hover:bg-gray-200"
                                 } rounded-lg`}
                             >
-                                Update Information
+                               {t.profileInfo}
                             </button>
                             <button
                                 onClick={() => setActiveTab("password")}
@@ -37,7 +39,7 @@ export default function Edit({ mustVerifyEmail, status }) {
                                         : "text-gray-700 bg-gray-100 hover:bg-gray-200"
                                 } rounded-lg`}
                             >
-                                Update Password
+                                {t.passwordReset}
                             </button>
                             <button
                                 onClick={() => setActiveTab("delete")}
@@ -47,7 +49,7 @@ export default function Edit({ mustVerifyEmail, status }) {
                                         : "text-gray-700 bg-gray-100 hover:bg-gray-200"
                                 } rounded-lg`}
                             >
-                                Delete Account
+                                {t.deleteAccount}
                             </button>
                         </nav>
                     </div>
