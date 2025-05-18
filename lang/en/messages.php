@@ -279,7 +279,30 @@ return [
     "close" => "Close",
     "status" => "Status",
     "services" => "Services",
-    "price" => "Price"
+    "price" => "Price" , 
+
+
+    // reservation page
+
+     "reservationPage" => "Reservation Page",
+     "selectCar" => "Select Car : ",
+     "selectAcar" => "Select a car",
+     "selectService" => "Select Service :",
+     "totalPrice" => "Total Price : ",
+     "booking" => "reservation" ,
+     "reserver" => "Reserve now " ,
+     "reservering" => "Reserving..." ,
+     "id" => "ID" ,
+     "carName" => "Car" ,
+     "washerName" => "Washer" ,
+     "status" => "Status",
+     "date" => "Date",
+     "services" => "Services",
+     "action" => "Action",
+
+
+
+
     
 
 

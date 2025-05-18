@@ -263,7 +263,28 @@ return [
     "close" => "Fermer",
     "status" => "Statut",
     "services" => "Services",
-    "price" => "Prix"
+    "price" => "Prix" , 
+
+
+
+    // Page de réservation
+
+    "reservationPage" => "Page de réservation",
+    "selectCar" => "Sélectionner une voiture :",
+    "selectAcar" => "Choisir une voiture",
+    "selectService" => "Sélectionner un service :",
+    "totalPrice" => "Prix total :",
+    "booking" => "Réservation",
+    "reserver" => "Réserver maintenant",
+    "reservering" => "Réservation en cours...",
+    "id" => "ID",
+    "carName" => "Voiture",
+    "washerName" => "Laveur",
+    "status" => "Statut",
+    "date" => "Date",
+    "services" => "Services",
+    "action" => "Action",
+
    
 
 
