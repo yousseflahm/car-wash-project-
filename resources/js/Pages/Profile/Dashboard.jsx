@@ -151,7 +151,7 @@ export default function Dashboard({ auth, bookings, services }) {
             >
               <Card className="text-center">
                 <CardContent>
-                  <p className="text-gray-600 text-lg">
+                  <p className="text-gray-600 mt-5 text-lg">
                     You don't have any bookings yet.
                   </p>
                 </CardContent>
@@ -247,14 +247,14 @@ export default function Dashboard({ auth, bookings, services }) {
                 <p className="text-lg font-bold text-gray-800 mb-4">
                   Price: ${selectedService.price}
                 </p>
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <h4 className="text-lg font-bold text-gray-800">Steps:</h4>
                   <ul className="list-disc list-inside text-gray-600">
                     {selectedService.steps?.map((step, index) => (
                       <li key={index}>{step}</li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
                 <button
                   className="w-full bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
                   onClick={closeModal}

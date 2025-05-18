@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { Link, usePage, useForm } from "@inertiajs/react";
+import { Link, usePage, useForm, Head } from "@inertiajs/react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 // icons from the heroicons/react
 import {
@@ -18,7 +18,6 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 import ApplicationLogo from "@/Components/ApplicationLogo";
 
-
 export default function ClientAthentificatedLayout({ children }) {
     // Get the user from the page props
     const user = usePage().props.auth.user;
@@ -28,6 +27,7 @@ export default function ClientAthentificatedLayout({ children }) {
     const initialNotifications = usePage().props.notifications || [];
     const [notifications, setNotifications] = useState(initialNotifications);
     console.log(notifications);
+
     //  State for the sidebar
     const [sidebarOpen, setSidebarOpen] = useState(false);
     // Get the current path
@@ -72,7 +72,7 @@ export default function ClientAthentificatedLayout({ children }) {
     function classNames(...classes) {
         return classes.filter(Boolean).join(" ");
     }
-    const SettingsRoute =  route("profile.edit");
+    const SettingsRoute = route("profile.edit");
 
     // Function to mark a notification as read
     const markAsRead = (notificationId) => {
@@ -100,6 +100,7 @@ export default function ClientAthentificatedLayout({ children }) {
 
     return (
         <>
+            <Head title="Dashboard" />
             <div className="font-kanit">
                 <Transition.Root show={sidebarOpen} as={Fragment}>
                     <Dialog
@@ -263,7 +264,7 @@ export default function ClientAthentificatedLayout({ children }) {
                                         ))}
                                     </ul>
                                 </li>
-                                {/* setting for large devices   */}
+                                {/* setting for large devices */}
                                 <li className="mt-auto">
                                     <a
                                         href={SettingsRoute}
@@ -282,7 +283,7 @@ export default function ClientAthentificatedLayout({ children }) {
                 </div>
 
                 <div className="lg:pl-72">
-                    <div className="sticky top-0   z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+                    <div className="sticky top-0  z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
                         <button
                             type="button"
                             className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
@@ -292,14 +293,77 @@ export default function ClientAthentificatedLayout({ children }) {
                             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                         </button>
 
-                        {/* Separator */}
-                        <div
-                            className="h-6 w-px bg-gray-900/10 lg:hidden"
-                            aria-hidden="true"
-                        />
-
                         <div className="flex flex-1 justify-end gap-x-4 self-stretch lg:gap-x-6">
                             <div className="flex items-center gap-x-4 lg:gap-x-6">
+                                {/* Language Dropdown */}
+                                <Menu as="div" className="relative ml-3">
+                                    <div>
+                                        <Menu.Button className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 focus:outline-none">
+                                            <span className="sr-only">
+                                                Open language menu
+                                            </span>
+                                            EN/FR
+                                            <ChevronDownIcon
+                                                className="ml-2 h-5 w-5 text-gray-400"
+                                                aria-hidden="true"
+                                            />
+                                        </Menu.Button>
+                                    </div>
+
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href={route(
+                                                            "lang.switch",
+                                                            ["en"]
+                                                        )}
+                                                        className={`block px-4 py-2 text-sm ${
+                                                            active
+                                                                ? "bg-gray-100 text-gray-900"
+                                                                : "text-gray-700"
+                                                        }`}
+                                                    >
+                                                        English
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href={route(
+                                                            "lang.switch",
+                                                            ["fr"]
+                                                        )}
+                                                        className={`block px-4 py-2 text-sm ${
+                                                            active
+                                                                ? "bg-gray-100 text-gray-900"
+                                                                : "text-gray-700"
+                                                        }`}
+                                                    >
+                                                        Français
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                        </Menu.Items>
+                                    </Transition>
+                                </Menu>
+
+                                {/* Separator */}
+                                <div
+                                    className="hidden  lg:block lg:h-6  lg:w-px lg:bg-gray-900/10"
+                                    aria-hidden="true"
+                                />
+                                {/* notification */}
                                 <Menu as="div" className="relative">
                                     <Menu.Button className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
                                         <span className="sr-only">
@@ -364,17 +428,19 @@ export default function ClientAthentificatedLayout({ children }) {
                                                                         }
                                                                     </p>
                                                                     <p className="text-xs text-gray-500">
-                                                                        {
-                                                                           new Date(notification.created_at).toLocaleString('en-US', {
-                                                                            year: 'numeric',
-                                                                            month: '2-digit',
-                                                                            day: '2-digit',
-                                                                            hour: '2-digit',
-                                                                            minute: '2-digit',
-                                                                            hour12: false, 
-                                                                        })
-                                                                        
-                                                                        }
+                                                                        {new Date(
+                                                                            notification.created_at
+                                                                        ).toLocaleString(
+                                                                            "en-US",
+                                                                            {
+                                                                                year: "numeric",
+                                                                                month: "2-digit",
+                                                                                day: "2-digit",
+                                                                                hour: "2-digit",
+                                                                                minute: "2-digit",
+                                                                                hour12: false,
+                                                                            }
+                                                                        )}
                                                                     </p>
                                                                 </div>
                                                             )
