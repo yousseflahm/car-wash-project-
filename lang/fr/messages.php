@@ -356,6 +356,9 @@ return [
 
      "address" => "Adresse",
 
+     "Washers" => "Laveurs",
+     "Reviews" => "Avis",
+
 
 
 

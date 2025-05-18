@@ -373,7 +373,9 @@ return [
     "noReservation" => "No bookings assigned to you.",
     "address" => "Address",
 
-    
+    "Washers" => "Washers",
+
+    "Reviews" => "Reviews",
 
     
      

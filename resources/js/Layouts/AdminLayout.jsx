@@ -19,17 +19,20 @@ export default function AdminAuthentificatedLayout({ children }) {
     const user = usePage().props.auth.user;
     const currentPath = usePage().url;
 
+    const { translations } = usePage().props;
+    const t = translations.messages;
+
     const navigationItems = [
-        { name: "Dashboard", href: route("admin.dashboard"), icon: HomeIcon },
+        { name: t.dashboard, href: route("admin.dashboard"), icon: HomeIcon },
         {
-            name: "Reservation ",
+            name: t.booking,
             href: route("admin.reservation"),
             icon: UsersIcon,
         },
-        { name: "Washers", href: route('admin.washers'), icon: FolderIcon },
-        { name: " Reviews", href: route('admin.reviews'), icon: CalendarIcon },
+        { name: t.Washers, href: route('admin.washers'), icon: FolderIcon },
+        { name: t.Reviews, href: route('admin.reviews'), icon: CalendarIcon },
         {
-            name: "services",
+            name: t.services,
             href: route('admin.services'),
             icon: DocumentDuplicateIcon,
         },
@@ -43,11 +46,11 @@ export default function AdminAuthentificatedLayout({ children }) {
 
     const userNavigation = [
         {
-            name: "Your profile",
+            name: t.yourProfile,
             href: route("admin.profile.edit"),
             methodType: "get",
         },
-        { name: "Sign out", href: route("admin.logout"), methodType: "post" },
+        { name: t.logout, href: route("admin.logout"), methodType: "post" },
     ];
 
     function classNames(...classes) {
@@ -172,7 +175,7 @@ export default function AdminAuthentificatedLayout({ children }) {
                                                             className="h-6 w-6 shrink-0"
                                                             aria-hidden="true"
                                                         />
-                                                        Settings
+                                                        {t.settings}
                                                     </a>
                                                 </li>
                                             </ul>
@@ -230,7 +233,7 @@ export default function AdminAuthentificatedLayout({ children }) {
                                             className="h-6 w-6 shrink-0"
                                             aria-hidden="true"
                                         />
-                                        Settings
+                                        {t.settings}
                                     </a>
                                 </li>
                             </ul>
