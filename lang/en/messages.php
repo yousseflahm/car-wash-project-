@@ -329,6 +329,38 @@ return [
     "BookingID" => "Booking ID",
     "generatePDF" => "Generate PDF",
 
+    // delete account
+    "deleteAccount" => "Delete Account",
+    "dataDescription" => " Once your account is deleted, all of its resources and data
+                    will be permanently deleted. Before deleting your account,
+                    please download any data or information that you wish to
+                    retain.",
+
+    "deleteAccountConfirmation" => "Are you sure you want to delete your account?",
+    
+    "deletingAccount" => "Deleting Account..." ,
+
+    // password reset
+    "passwordReset" => "Password Reset",
+    "textUpdate" => "Ensure your account is using a long, random password to stay
+                    secure.",
+    "current_password" => "Current Password",
+    "new_password" => "New Password",
+    "confirm_password" => "Confirm Password",
+    "save" => "Save",
+    "saved" => "Saved" ,
+
+
+    //profile page info
+
+    "profile" => "Profile",
+    "profileInfo" => "Profile Information",
+    "profileInfoText" => "Update your account's profile information and email address.",
+
+    
+
+    
+     
 
 
 

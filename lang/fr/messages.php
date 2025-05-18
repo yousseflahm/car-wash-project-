@@ -300,8 +300,6 @@ return [
     "update" => "Mettre à jour",
     "updating" => "Mise à jour en cours...",
 
-
-
     // Page d'avis
 
     "reviewPage" => "Page des avis",
@@ -315,6 +313,34 @@ return [
     "Invoice" => "Facture de réservation",
     "BookingID" => "ID de réservation",
     "generatePDF" => "Générer le PDF",
+
+
+    // Suppression du compte
+
+    "deleteAccount" => "Supprimer le compte",
+    "dataDescription" => "Une fois votre compte supprimé, toutes ses ressources et données seront définitivement effacées. Avant de supprimer votre compte, veuillez télécharger toutes les données ou informations que vous souhaitez conserver.",
+    "deleteAccountConfirmation" => "Êtes-vous sûr de vouloir supprimer votre compte ?",
+    "deletingAccount" => "Suppression du compte...",
+
+
+    // Réinitialisation du mot de passe
+
+    "passwordReset" => "Réinitialisation du mot de passe",
+    "textUpdate" => "Assurez-vous d'utiliser un mot de passe long et aléatoire pour sécuriser votre compte.",
+    "current_password" => "Mot de passe actuel",
+    "new_password" => "Nouveau mot de passe",
+    "confirm_password" => "Confirmer le mot de passe",
+    "save" => "Enregistrer",
+    "saved" => "Enregistré",
+
+    // Informations du profil
+
+    "profile" => "Profil",
+    "profileInfo" => "Informations du profil",
+    "profileInfoText" => "Mettez à jour les informations de votre profil et votre adresse e-mail.",
+
+
+
 
 
 
