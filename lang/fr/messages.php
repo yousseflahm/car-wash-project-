@@ -381,6 +381,14 @@ return [
     "Rating" => "Évaluation",
     "Comment" => "Commentaire",
 
+    "Description" => "Description",
+    "Price" => "Prix",
+
+    "ServiceName" => "Nom du service",
+    "ServiceDescription" => "Description du service",
+    "ServicePrice" => "Prix du service",
+    "AddService" => "Ajouter un service",
+    "Adding" => "Ajout en cours...",
 
 
 

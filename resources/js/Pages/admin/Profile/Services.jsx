@@ -11,6 +11,9 @@ export default function Services({ services }) {
         price: "",
     });
 
+    const {translations} = usePage().props;
+    const t = translations.messages
+
     // Get flash messages from the page props
     const { flash } = usePage().props;
 
@@ -50,7 +53,7 @@ export default function Services({ services }) {
 
     return (
         <AdminAuthenticatedLayout>
-            <h1 className="text-2xl font-bold mb-6">Services</h1>
+            <h1 className="text-2xl font-bold mb-6">{t.services}</h1>
 
             {/* Flash Messages */}
             {flash.success && (
@@ -73,7 +76,7 @@ export default function Services({ services }) {
                             type="text"
                             value={data.name}
                             onChange={(e) => setData("name", e.target.value)}
-                            placeholder="Service Name"
+                            placeholder={t.ServiceName}
                             className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
                         />
                         {errors.name && (
@@ -87,7 +90,7 @@ export default function Services({ services }) {
                             type="text"
                             value={data.description}
                             onChange={(e) => setData("description", e.target.value)}
-                            placeholder="Service Description"
+                            placeholder={t.ServiceDescription}
                             className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
                         />
                         {errors.description && (
@@ -101,7 +104,7 @@ export default function Services({ services }) {
                             type="number"
                             value={data.price}
                             onChange={(e) => setData("price", e.target.value)}
-                            placeholder="Service Price"
+                            placeholder={t.ServicePrice}
                             className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
                         />
                         {errors.price && (
@@ -116,7 +119,7 @@ export default function Services({ services }) {
                             disabled={processing}
                             className="w-full md:w-auto px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
                         >
-                            {processing ? "Adding..." : "Add Service"}
+                            {processing ? t.Adding : t.AddService}
                         </button>
                     </div>
                 </div>
@@ -132,13 +135,13 @@ export default function Services({ services }) {
                         >
                             <div>
                                 <p className="text-lg font-semibold mb-2">
-                                    <strong>Name:</strong> {service.name}
+                                    <strong>{t.name}</strong> {service.name}
                                 </p>
                                 <p className="mb-2">
-                                    <strong>Description:</strong> {service.description}
+                                    <strong>{t.Description}:</strong> {service.description}
                                 </p>
                                 <p className="text-sm text-gray-500">
-                                    <strong>Price:</strong> ${service.price}
+                                    <strong>{t.Price}:</strong> ${service.price}
                                 </p>
                             </div>
 

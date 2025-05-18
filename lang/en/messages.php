@@ -402,6 +402,15 @@ return [
     "Rating" => "Rating",
     "Comment" => "Comment",
 
+    "Description" => "Description",
+    "Price" => "Price",
+
+    "ServiceName" => "Service Name",
+    "ServiceDescription" => "Service Description",
+    "ServicePrice" => "Service Price",
+    "AddService" => "Add Service",
+    "Adding" => "Adding..." ,
+
    
 
 
