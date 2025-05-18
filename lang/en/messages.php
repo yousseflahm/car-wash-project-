@@ -357,6 +357,16 @@ return [
     "profileInfo" => "Profile Information",
     "profileInfoText" => "Update your account's profile information and email address.",
 
+
+    // washer layout 
+
+    "ManageReservation" => "Manage Reservations",
+
+    //  dashboard washer
+    "CurrentBookings" => "Current Bookings",
+    "PendingBookings" => "Pending Bookings",
+    "CompletedBookings" => "Completed Bookings",
+
     
 
     

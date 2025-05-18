@@ -17,9 +17,10 @@ import ApplicationLogo from "@/Components/ApplicationLogo";
 
 export default function WasherAuthentificatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
-    
-    console.log(user);
-    
+
+    const {translations} = usePage().props;
+    const t = translations.messages;
+
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const initialNotifications = usePage().props.notifications || [];
     const [notifications, setNotifications] = useState(initialNotifications);
@@ -29,7 +30,7 @@ export default function WasherAuthentificatedLayout({ header, children }) {
     const { post } = useForm();
 
     const navigationItems = [
-        { name: "Dashboard", href: route("washer.dashboard"), icon: HomeIcon },
+        { name: t.dashboard, href: route("washer.dashboard"), icon: HomeIcon },
         // {
         //     name: "My Tasks",
         //     href: "#",
@@ -37,7 +38,7 @@ export default function WasherAuthentificatedLayout({ header, children }) {
         //     current: false,
         // },
         {
-            name: "Manage Bookings",
+            name: t.ManageReservation,
             href: route("washer.getBookingPageWasher"),
             icon: CalendarIcon,
         },
@@ -53,11 +54,11 @@ export default function WasherAuthentificatedLayout({ header, children }) {
 
     const userNavigation = [
         {
-            name: "Your profile",
+            name: t.yourProfile,
             href: route("washer.profile.edit"),
             methodType: "get",
         },
-        { name: "Sign out", href: route("washer.logout"), methodType: "post" },
+        { name: t.logout, href: route("washer.logout"), methodType: "post" },
     ];
 
     function classNames(...classes) {
@@ -196,14 +197,16 @@ export default function WasherAuthentificatedLayout({ header, children }) {
                                                 {/* setting small devices  */}
                                                 <li className="mt-auto">
                                                     <a
-                                                        href={route("washer.profile.edit")}
+                                                        href={route(
+                                                            "washer.profile.edit"
+                                                        )}
                                                         className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
                                                     >
                                                         <Cog6ToothIcon
                                                             className="h-6 w-6 shrink-0"
                                                             aria-hidden="true"
                                                         />
-                                                        Settings
+                                                        {t.settings}
                                                     </a>
                                                 </li>
                                             </ul>
@@ -260,7 +263,7 @@ export default function WasherAuthentificatedLayout({ header, children }) {
                                             className="h-6 w-6 shrink-0"
                                             aria-hidden="true"
                                         />
-                                        Settings
+                                        {t.settings}
                                     </a>
                                 </li>
                             </ul>
@@ -287,6 +290,76 @@ export default function WasherAuthentificatedLayout({ header, children }) {
 
                         <div className="flex flex-1 justify-end gap-x-4 self-stretch lg:gap-x-6">
                             <div className="flex items-center gap-x-4 lg:gap-x-6">
+                                
+                                 {/* Language Dropdown */}
+                                 <Menu as="div" className="relative ml-3">
+                                    <div>
+                                        <Menu.Button className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 focus:outline-none">
+                                            <span className="sr-only">
+                                                Open language menu
+                                            </span>
+                                            EN/FR
+                                            <ChevronDownIcon
+                                                className="ml-2 h-5 w-5 text-gray-400"
+                                                aria-hidden="true"
+                                            />
+                                        </Menu.Button>
+                                    </div>
+
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href={route(
+                                                            "lang.switch",
+                                                            ["en"]
+                                                        )}
+                                                        className={`block px-4 py-2 text-sm ${
+                                                            active
+                                                                ? "bg-gray-100 text-gray-900"
+                                                                : "text-gray-700"
+                                                        }`}
+                                                    >
+                                                        English
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href={route(
+                                                            "lang.switch",
+                                                            ["fr"]
+                                                        )}
+                                                        className={`block px-4 py-2 text-sm ${
+                                                            active
+                                                                ? "bg-gray-100 text-gray-900"
+                                                                : "text-gray-700"
+                                                        }`}
+                                                    >
+                                                        Français
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                        </Menu.Items>
+                                    </Transition>
+                                </Menu>
+
+                               {/* Separator */}
+                               <div
+                                    className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10"
+                                    aria-hidden="true"
+                                />
+
                                 <Menu as="div" className="relative">
                                     <Menu.Button className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
                                         <span className="sr-only">

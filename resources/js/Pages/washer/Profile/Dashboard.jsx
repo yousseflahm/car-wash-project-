@@ -1,30 +1,28 @@
 import SummaryCard from "@/Components/SummaryCard";
 import WasherAuthentificatedLayout from "@/Layouts/WasherLayout";
 import WasherChart from "@/Components/WasherTrendBooking";
-import { Head } from "@inertiajs/react";
+import { Head , usePage } from "@inertiajs/react";
 import { MdOutlineDownloadDone } from "react-icons/md";
 import { MdPendingActions } from "react-icons/md";
 import { FaClipboardList } from "react-icons/fa";
 
-export default function Dashboard({
-    CurrentBookings,
-    PendingBookings,
-    CompletedBookings,
-    chartData,
-}) {
+export default function Dashboard({CurrentBookings, PendingBookings,CompletedBookings,chartData,}) {
+
+    const {translations} = usePage().props;
+    const t = translations.messages 
     const SummaryData = [
         {
-            title: "Current Bookings",
+            title: t.CurrentBookings,
             value: CurrentBookings,
             icon: FaClipboardList,
         },
         {
-            title: "Pending Bookings",
+            title: t.PendingBookings,
             value: PendingBookings,
             icon: MdPendingActions,
         },
         {
-            title: "Completed Bookings",
+            title: t.CompletedBookings,
             value: CompletedBookings,
             icon: MdOutlineDownloadDone,
         },

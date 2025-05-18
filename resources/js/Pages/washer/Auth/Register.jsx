@@ -94,7 +94,7 @@ export default function Register() {
                                     htmlFor="name"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    {t.washerName}
+                                    {t.registerName}
                                 </label>
                                 <input
                                     id="name"

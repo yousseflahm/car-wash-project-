@@ -339,6 +339,17 @@ return [
     "profileInfo" => "Informations du profil",
     "profileInfoText" => "Mettez à jour les informations de votre profil et votre adresse e-mail.",
 
+    // Interface du laveur
+
+    "ManageReservation" => "Gérer les réservations",
+
+    // Tableau de bord du laveur
+
+    "CurrentBookings" => "Réservations en cours",
+    "PendingBookings" => "Réservations en attente",
+    "CompletedBookings" => "Réservations terminées",
+
+
 
 
 
