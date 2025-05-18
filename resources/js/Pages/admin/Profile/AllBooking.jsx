@@ -1,9 +1,11 @@
 import AdminAuthenticatedLayout from '@/Layouts/AdminLayout';
-import { router } from '@inertiajs/react';
+import { router , usePage } from '@inertiajs/react';
 import { useState } from 'react';
 
 export default function AllBooking({ bookings, washers }) {
     const [selectedWasher, setSelectedWasher] = useState({});
+    const {translations} = usePage().props;
+    const  t  = translations.messages;
 
     const handleWasherChange = (bookingId, washerId) => {
         setSelectedWasher((prev) => ({
@@ -23,37 +25,37 @@ export default function AllBooking({ bookings, washers }) {
 
     return (
         <AdminAuthenticatedLayout>
-            <h1 className="text-2xl font-bold mb-4">All Bookings</h1>
+            <h1 className="text-2xl font-bold mb-4">{t.allReservations}</h1>
             <div className="overflow-x-auto">
                 <table className="min-w-full bg-white border border-gray-300 shadow-sm rounded-lg overflow-hidden">
                     <thead className="bg-gray-50">
                         <tr>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                ID
+                                {t.id}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                User
+                                {t.customerName}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Car
+                                {t.carName}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Washer
+                                {t.washerName}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Date
+                                {t.date}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Total Price
+                                {t.totalPrice}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Services
+                                {t.services}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Status
+                                {t.status}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Action
+                                {t.action}
                             </th>
                         </tr>
                     </thead>
@@ -75,7 +77,7 @@ export default function AllBooking({ bookings, washers }) {
                                         onChange={(e) => handleWasherChange(booking.id_booking, e.target.value)}
                                         className="border rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     >
-                                        <option value="">Select Washer</option>
+                                        <option value="">Select {t.washerName}</option>
                                         {washers.map((washer) => (
                                             <option key={washer.id} value={washer.id}>
                                                 {washer.name}
@@ -120,7 +122,7 @@ export default function AllBooking({ bookings, washers }) {
                                         onClick={() => handleAssignWasher(booking.id_booking)}
                                         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
                                     >
-                                        Assign
+                                        {t.Assign}
                                     </button>
                                 </td>
                             </tr>

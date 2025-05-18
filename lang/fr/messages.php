@@ -359,6 +359,32 @@ return [
      "Washers" => "Laveurs",
      "Reviews" => "Avis",
 
+    //  dashboard admin
+
+    "TotalRevenue" => "Revenu total",
+    "TodayRevenue" => "Revenu d'aujourd'hui",
+    "TotalClients" => "Nombre total de clients",
+
+    "TopUsers" => "Meilleurs utilisateurs",
+    "morethan" => "Utilisateurs avec plus de 3 réservations terminées",
+    "TotalBookings" => "Nombre total de réservations",
+
+    "TopServices" => "Meilleurs services",
+    "mostUsed" => "Services les plus utilisés",
+
+    "BookingTrends" => "Tendances des réservations",
+    "trendsText" => "Affichage du total des réservations au fil du temps",
+    "Last6months" => "6 derniers mois",
+    // admin all reservations 
+    "allReservations" => "Toutes les réservations",
+    "Assign" => "Assigner",
+    "Rating" => "Évaluation",
+    "Comment" => "Commentaire",
+
+
+
+
+
 
 
 

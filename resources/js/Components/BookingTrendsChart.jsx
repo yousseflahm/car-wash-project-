@@ -13,6 +13,7 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart";
+import { usePage } from "@inertiajs/react";
 
 export default function BookingTrendsChart({ bookingTrends }) {
     // Format the data for the chart
@@ -20,7 +21,8 @@ export default function BookingTrendsChart({ bookingTrends }) {
         month: item.month,
         bookings: item.bookings,
     }));
-
+    const {translations} = usePage().props;
+    const t = translations.messages
     const chartConfig = {
         bookings: {
             label: "Bookings",
@@ -31,9 +33,9 @@ export default function BookingTrendsChart({ bookingTrends }) {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Booking Trends</CardTitle>
+                <CardTitle>{t.BookingTrends}</CardTitle>
                 <CardDescription>
-                    Showing total bookings over time
+                    {t.trendsText}
                 </CardDescription>
             </CardHeader>
             <CardContent>
@@ -77,7 +79,7 @@ export default function BookingTrendsChart({ bookingTrends }) {
                             <TrendingUp className="h-4 w-4" />
                         </div>
                         <div className="flex items-center gap-2 leading-none text-muted-foreground">
-                            Last 6 months
+                            {t.Last6months}
                         </div>
                     </div>
                 </div>

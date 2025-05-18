@@ -1,11 +1,12 @@
 import AdminAuthenticatedLayout from "@/Layouts/AdminLayout";
-import { Head } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 import { DollarSign, Users } from "lucide-react";
 import SummaryCard from "@/Components/SummaryCard";
 
 import BookingTrendsChart from "@/Components/BookingTrendsChart";
 import TopUsers from "@/Components/TopUsers";
 import TopServices from "@/Components/TopServices";
+
 
 export default function Dashboard({
     totalRevenue,
@@ -16,28 +17,25 @@ export default function Dashboard({
     topUsers ,
     topServices
 }) {
-    console.log(
-        totalRevenue,
-        todayRevenue,
-        totalClients,
-        percentageClientLastMonth
-    );
+    
+    const {translations} = usePage().props;
+    const t = translations.messages
 
     const SummaryData = [
         {
-            title: "Total Revenue",
+            title: t.TotalRevenue,
             value: totalRevenue,
             icon: DollarSign,
             footerValue: "",
         },
         {
-            title: "Today Revenue",
+            title: t.TodayRevenue,
             value: todayRevenue,
             icon: DollarSign,
             footerValue: "",
         },
         {
-            title: "Total Clients",
+            title: t.TotalClients,
             value: totalClients,
             icon: Users,
             footerValue: 17.22 || "",

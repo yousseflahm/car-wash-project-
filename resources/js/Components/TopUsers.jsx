@@ -5,22 +5,25 @@ import {
     CardContent,
     CardDescription,
   } from "@/components/ui/card";
-  import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-  
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"; 
+import { usePage } from "@inertiajs/react";
+
   export default function TopUsers({ topUsers }) {
+    const { translations } = usePage().props;
+    const t = translations.messages;
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Top Users</CardTitle>
-          <CardDescription>Users with more than 3 completed bookings</CardDescription>
+          <CardTitle>{t.TopUsers}</CardTitle>
+          <CardDescription>{t.morethan}</CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Email</TableHead>
-                <TableHead>Total Bookings</TableHead>
+                <TableHead>{t.name}</TableHead>
+                <TableHead>{t.email}</TableHead>
+                <TableHead>{t.TotalBookings}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

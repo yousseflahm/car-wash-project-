@@ -8,6 +8,8 @@ export default function Washers({ washers }) {
     const [selectedStatus, setSelectedStatus] = useState({});
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [washerToDelete, setWasherToDelete] = useState(null);
+    const {translations} = usePage().props;
+    const t = translations.messages
 
     // Map the washers data to include additional properties (e.g., CSS classes)
     const mappedWashers = washers.map((washer) => {
@@ -72,34 +74,34 @@ export default function Washers({ washers }) {
                 <div className={`p-4 mb-4 ${flashClass}`}>{flash.success}</div>
             )}
 
-            <h1 className="text-2xl font-bold mb-4">Washers</h1>
+            <h1 className="text-2xl font-bold mb-4">{t.washerName}</h1>
             <div className="overflow-x-auto">
                 <table className="min-w-full bg-white border border-gray-300 shadow-sm rounded-lg overflow-hidden">
                     <thead className="bg-gray-50">
                         <tr>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                ID
+                                {t.id}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Name
+                                {t.name}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Last Name
+                                {t.registerLastName}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Phone
+                                {t.registerPhone}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Address
+                                {t.address}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Email
+                                {t.email}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Status
+                                {t.status}
                             </th>
                             <th className="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">
-                                Action
+                                {t.action}
                             </th>
                         </tr>
                     </thead>

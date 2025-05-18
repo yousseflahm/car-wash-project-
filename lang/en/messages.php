@@ -369,13 +369,42 @@ return [
 
     // manage reservation page
 
-    "customerName" => "Customer Name",
+    "customerName" => "Customer Name   ",
     "noReservation" => "No bookings assigned to you.",
     "address" => "Address",
 
     "Washers" => "Washers",
 
     "Reviews" => "Reviews",
+
+
+//   admin dashboard 
+    "TotalRevenue" => "Total Revenue",
+    "TodayRevenue" => "Today's Revenue",
+    "TotalClients" => "Total Clients",
+
+    "TopUsers" => "Top Users",
+    "morethan" => "Users with more than 3 completed bookings",
+    "TotalBookings" => "Total Bookings",
+
+    "TopServices" => "Top Services",
+    "mostUsed" => "Most Used Services",
+
+    "BookingTrends" => "Booking Trends",
+    "trendsText" => " Showing total bookings over time",
+    "Last6months" => "Last 6 months",
+
+
+//   admin page reservation 
+    "allReservations" => "All Reservations",
+    "Assign" => "Assign",
+
+    "Rating" => "Rating",
+    "Comment" => "Comment",
+
+   
+
+
 
     
      

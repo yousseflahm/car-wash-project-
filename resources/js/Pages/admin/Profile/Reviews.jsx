@@ -1,5 +1,6 @@
 import React from "react";
 import AdminAuthenticatedLayout from "@/Layouts/AdminLayout";
+import { usePage } from "@inertiajs/react";
 
 export default function Reviews({ reviews }) {
     const renderStars = (rating) => {
@@ -19,6 +20,9 @@ export default function Reviews({ reviews }) {
         ));
     };
 
+    const {translations}= usePage().props;
+    const t = translations.messages
+
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const year = date.getFullYear();
@@ -29,7 +33,7 @@ export default function Reviews({ reviews }) {
 
     return (
         <AdminAuthenticatedLayout>
-            <h1 className="text-2xl font-bold mb-6">Reviews</h1>
+            <h1 className="text-2xl font-bold mb-6">{t.Reviews}</h1>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {reviews.length > 0 ? (
                     reviews.map((review) => (
@@ -37,21 +41,21 @@ export default function Reviews({ reviews }) {
                             key={review.id_review}
                             className="bg-white shadow-md rounded-lg p-6 mb-6"
                         >
-                            <p className="text-lg font-semibold mb-2">
-                                <strong>User:</strong> {review.user_name}
+                            <p className="text-lg font-semibold flex flex-col mb-2">
+                                <strong>{t.customerName}:{"  "}  </strong> {review.user_name}
                             </p>
-                            <p className="mb-2">
-                                <strong>Rating:</strong>{" "}
+                            <p className="mb-2 flex flex-col">
+                                <strong>{t.Rating}: {"  "}</strong>{" "}
                                 <span className="flex items-center">
                                     {renderStars(review.rating)}
                                 </span>
                             </p>
                             <p className="mb-2">
-                                <strong>Comment:</strong>{" "}
+                                <strong>{t.Comment}:</strong>{" "}
                                 {review.comment || "No comment provided"}
                             </p>
                             <p className="text-sm text-gray-500">
-                                <strong>Date:</strong>{" "}
+                                <strong>{t.date}:</strong>{" "}
                                 {formatDate(review.created_at)}
                             </p>
                         </div>
