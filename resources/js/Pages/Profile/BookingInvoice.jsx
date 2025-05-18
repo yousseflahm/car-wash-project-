@@ -1,5 +1,5 @@
 import React from "react";
-import { Head , Link } from "@inertiajs/react";
+import { Head , usePage } from "@inertiajs/react";
 import ClientAthentificatedLayout from "@/Layouts/ClientLayout";
 import { FaFilePdf } from "react-icons/fa"; // PDF icon
 
@@ -11,34 +11,38 @@ export default function Documents({ bookingsCompleted }) {
         );
     };
 
+    // Get translations from the page props
+    const { translations } = usePage().props;
+    const t = translations.messages;
+
     return (
         <ClientAthentificatedLayout>
             <Head title="Documents" />
             <div className="p-6">
                 <h1 className="text-2xl font-bold text-gray-800 mb-6">
-                    Booking Invoice
+                    {t.Invoice}
                 </h1>
                 <div className="overflow-x-auto">
                     <table className="min-w-full bg-white rounded-lg shadow-md">
                         <thead className="bg-blue-50">
                             <tr>
                                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase">
-                                    Booking ID
+                                    {t.BookingID}
                                 </th>
                                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase">
-                                    Car
+                                    {t.carName}
                                 </th>
                                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase">
-                                    Status
+                                    {t.status}
                                 </th>
                                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase">
-                                    Services
+                                    {t.services}
                                 </th>
                                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase">
-                                    Total Price
+                                    {t.totalPrice}
                                 </th>
                                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase">
-                                    Actions
+                                    {t.generatePDF}
                                 </th>
                             </tr>
                         </thead>
@@ -84,7 +88,7 @@ export default function Documents({ bookingsCompleted }) {
                                                 )}
                                             >
                                                 <FaFilePdf className="w-5 h-5 mr-2" />
-                                                Generate PDF
+                                                {t.generatePDF}
                                             </a>
                                         </td>
                                     </tr>

@@ -315,6 +315,23 @@ return [
     "updating" => "Updating..." ,
 
 
+    // review page
+
+    "reviewPage" => "Review Page",
+    "rateYourExperience" => "Rate Your Experience",
+    "writeAReview" => "Write a Review",
+    "Write_your_review" => "Write your review here...",
+
+
+    // Booking Invoice
+
+    "Invoice" => "Reservation Invoice",
+    "BookingID" => "Booking ID",
+    "generatePDF" => "Generate PDF",
+
+
+
+
 
 
 

@@ -301,6 +301,24 @@ return [
     "updating" => "Mise à jour en cours...",
 
 
+
+    // Page d'avis
+
+    "reviewPage" => "Page des avis",
+    "rateYourExperience" => "Évaluez votre expérience",
+    "writeAReview" => "Rédiger un avis",
+    "Write_your_review" => "Écrivez votre avis ici...",
+
+
+    // Facture de réservation
+
+    "Invoice" => "Facture de réservation",
+    "BookingID" => "ID de réservation",
+    "generatePDF" => "Générer le PDF",
+
+
+
+
    
 
 

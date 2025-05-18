@@ -15,6 +15,10 @@ export default function ReviewPage({ auth }) {
 
     const [hoverRating, setHoverRating] = useState(0);
 
+    // Get translations from the page props
+    const { translations } = usePage().props;
+    const t = translations.messages;
+
     // Handle rating change
     const handleRatingChange = (newRating) => {
         setData("rating", newRating);
@@ -39,7 +43,7 @@ export default function ReviewPage({ auth }) {
 
     return (
         <ClientAthentificatedLayout>
-            <h1 className="text-2xl font-bold mb-5">Review Page</h1>
+            <h1 className="text-2xl font-bold mb-5">{t.reviewPage}</h1>
 
             {/* Display flash message if it exists */}
             {flash.success && (
@@ -50,7 +54,7 @@ export default function ReviewPage({ auth }) {
 
             <div className="mb-5">
                 <h2 className="text-lg font-semibold mb-2">
-                    Rate your experience:
+                    {t.rateYourExperience}
                 </h2>
                 <div className="flex items-center">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -79,12 +83,12 @@ export default function ReviewPage({ auth }) {
             </div>
             <div className="mb-5">
                 <h2 className="text-lg font-semibold mb-2">
-                    Write your review:
+                  {t.writeAReview}
                 </h2>
                 <textarea
                     value={data.comment}
                     onChange={(e) => setData("comment", e.target.value)}
-                    placeholder="Write your review here..."
+                    placeholder={t.Write_your_review}
                     rows={4}
                     className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
                 />
@@ -99,7 +103,7 @@ export default function ReviewPage({ auth }) {
                 disabled={processing}
                 className="px-4 py-2 bg-blue-300 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-                {processing ? "Submitting..." : "Submit Review"}
+                {processing ? t.submitting : t.submit }
             </button>
         </ClientAthentificatedLayout>
     );
