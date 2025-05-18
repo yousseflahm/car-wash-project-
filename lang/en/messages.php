@@ -301,6 +301,21 @@ return [
      "action" => "Action",
 
 
+    //  manage cars page
+    "brand" => "Brand",
+    "model" => "Model",
+    "submit" => "Submit",
+    "submitting" => "Submitting..." ,
+    "action" => "Action",
+
+    // edit car page
+    "editCar" => "Edit Car",
+    "cancel" => "Cancel",
+    "update" => "Update",
+    "updating" => "Updating..." ,
+
+
+
 
 
     

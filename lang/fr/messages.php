@@ -285,6 +285,22 @@ return [
     "services" => "Services",
     "action" => "Action",
 
+
+
+    // Page de gestion des voitures
+    "brand" => "Marque",
+    "model" => "Modèle",
+    "submit" => "Soumettre",
+    "submitting" => "Envoi en cours...",
+    "action" => "Action",
+
+    // Page de modification de voiture
+    "editCar" => "Modifier la voiture",
+    "cancel" => "Annuler",
+    "update" => "Mettre à jour",
+    "updating" => "Mise à jour en cours...",
+
+
    
 
 

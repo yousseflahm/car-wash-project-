@@ -15,7 +15,7 @@ export default function Booking({ cars, services, bookings }) {
     // Get translations from the page props
      const { translations } = usePage().props;
      const t = translations.messages;
-     console.log(t);
+    
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [bookingToDelete, setBookingToDelete] = useState(null);

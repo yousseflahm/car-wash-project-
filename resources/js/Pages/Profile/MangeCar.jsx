@@ -6,7 +6,6 @@ import ConfirmationModal from "@/Components/ConfirmationModal"; // Import the mo
 
 export default function MangeCar({ auth, cars }) {
     const userId = auth.user.id;
-
     const {
         data,
         setData,
@@ -19,6 +18,9 @@ export default function MangeCar({ auth, cars }) {
         brand: "",
         model: "",
     });
+    // Get translations from the page props
+    const { translations } = usePage().props;
+    const t = translations.messages;
 
     // Access flash messages from the server
     const { flash } = usePage().props;
@@ -71,7 +73,7 @@ export default function MangeCar({ auth, cars }) {
                                 htmlFor="brand"
                                 className="text-gray-700 font-medium mb-1"
                             >
-                                Brand
+                                {t.brand}
                             </label>
                             <div className="flex flex-col">
                                 <input
@@ -102,7 +104,7 @@ export default function MangeCar({ auth, cars }) {
                                 htmlFor="model"
                                 className="text-gray-700 font-medium mb-1"
                             >
-                                Model
+                                {t.model}
                             </label>
                             <div className="flex flex-col">
                                 <input
@@ -133,7 +135,7 @@ export default function MangeCar({ auth, cars }) {
                             disabled={processing}
                             className="bg-blue-300 px-4 py-2 rounded-lg text-white hover:bg-blue-900 focus:outline-none w-fit focus:ring-2 focus:ring-blue-500 mt-4 md:mt-0"
                         >
-                            {processing ? "Submitting..." : "Submit"}
+                            {processing ? t.submitting : t.submit}
                         </button>
                     </form>
                 </div>
@@ -146,13 +148,13 @@ export default function MangeCar({ auth, cars }) {
                             <thead className="bg-blue-50">
                                 <tr>
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Brand
+                                        {t.brand}
                                     </th>
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Model
+                                        {t.model}
                                     </th>
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Actions
+                                        {t.action}
                                     </th>
                                 </tr>
                             </thead>
