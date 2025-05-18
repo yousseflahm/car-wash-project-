@@ -239,7 +239,31 @@ return [
 
 // Buttons & Links
     "adminLoginButton" => "Se connecter",
-    "adminLoggingIn" => "Connexion en cours..."
+    "adminLoggingIn" => "Connexion en cours..." , 
+// client layout 
+    "dashboard" => "Tableau de bord",
+    "reservation" => "Mes réservations",
+    "mangeCars" => "Gérer les voitures",
+    "leaveReview" => "Laisser un avis",
+    "reservationInvoice" => "Facture de réservation",
+    "settings" => "Paramètres",
+    "yourProfile" => "Votre profil",
+    "logout" => "Se déconnecter",
+
+
+      // Dashboard Page
+    "dashboardWelcome" => "Bienvenue",
+    "dashboardSubtitle" => "Voici vos réservations et services disponibles.",
+    "yourBookings" => "Vos Réservations",
+    "noBookings" => "Vous n'avez aucune réservation pour le moment.",
+    "allServices" => "Tous les Services",
+    "addCar" => "Ajouter une Voiture",
+    "bookNow" => "Réserver Maintenant",
+    "details" => "Détails",
+    "close" => "Fermer",
+    "status" => "Statut",
+    "services" => "Services",
+    "price" => "Prix"
    
 
 

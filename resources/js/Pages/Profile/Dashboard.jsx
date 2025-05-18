@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ClientAthentificatedLayout from "@/Layouts/ClientLayout";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Card,
@@ -9,10 +9,14 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "@/components/ui/card"; // Import shadcn card components
+} from "@/components/ui/card";
 
 export default function Dashboard({ auth, bookings, services }) {
   const [selectedService, setSelectedService] = useState(null);
+  const { translations } = usePage().props;
+  const t = translations.messages;
+
+ 
 
   const carStatusImages = [
     {
@@ -53,6 +57,8 @@ export default function Dashboard({ auth, bookings, services }) {
   return (
     <ClientAthentificatedLayout>
       <div className="p-6">
+       
+
         {/* Welcome Message */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -61,11 +67,11 @@ export default function Dashboard({ auth, bookings, services }) {
           className="mb-8"
         >
           <h2 className="text-3xl font-bold text-gray-800">
-            Welcome {""},{" "}
+            {t.dashboardWelcome} {""},{" "}
             <span className="text-blue-300">{auth.user.name}</span>
           </h2>
           <p className="text-gray-600 mt-2">
-            Here are your bookings and available services.
+            {t.dashboardSubtitle}
           </p>
         </motion.div>
 
@@ -76,7 +82,7 @@ export default function Dashboard({ auth, bookings, services }) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-8"
         >
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Your Bookings</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.yourBookings}</h2>
           {bookings.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {bookings.map((booking) => {
@@ -106,14 +112,14 @@ export default function Dashboard({ auth, bookings, services }) {
                               {booking.car}
                             </CardTitle>
                             <CardDescription className="text-gray-600 capitalize">
-                              Status: {booking.status}
+                              {t.status}: {booking.status}
                             </CardDescription>
                           </div>
                         </div>
                       </CardHeader>
                       <CardContent>
                         <h4 className="text-lg font-bold text-gray-800 mb-2">
-                          Services:
+                          {t.services}:
                         </h4>
                         <div className="space-y-2">
                           {booking.services.map((service) => (
@@ -152,7 +158,7 @@ export default function Dashboard({ auth, bookings, services }) {
               <Card className="text-center">
                 <CardContent>
                   <p className="text-gray-600 mt-5 text-lg">
-                    You don't have any bookings yet.
+                    {t.noBookings}
                   </p>
                 </CardContent>
               </Card>
@@ -170,13 +176,13 @@ export default function Dashboard({ auth, bookings, services }) {
               className="w-full sm:w-auto bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
               href={route("MangeCar")}
             >
-              Add Car
+              {t.addCar}
             </Link>
             <Link
               className="w-full sm:w-auto bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors duration-300"
               href={route("BookingPage")}
             >
-              Book Now
+              {t.bookNow}
             </Link>
           </motion.div>
         </motion.div>
@@ -188,7 +194,7 @@ export default function Dashboard({ auth, bookings, services }) {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mb-8"
         >
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">All Services</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">{t.allServices}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <motion.div
@@ -216,7 +222,7 @@ export default function Dashboard({ auth, bookings, services }) {
                       className="w-full bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
                       onClick={() => handleDetailsClick(service)}
                     >
-                      Details
+                      {t.details}
                     </button>
                   </CardFooter>
                 </Card>
@@ -245,21 +251,13 @@ export default function Dashboard({ auth, bookings, services }) {
                 </h3>
                 <p className="text-gray-600 mb-4">{selectedService.description}</p>
                 <p className="text-lg font-bold text-gray-800 mb-4">
-                  Price: ${selectedService.price}
+                  {t.price}: ${selectedService.price}
                 </p>
-                {/* <div className="mb-4">
-                  <h4 className="text-lg font-bold text-gray-800">Steps:</h4>
-                  <ul className="list-disc list-inside text-gray-600">
-                    {selectedService.steps?.map((step, index) => (
-                      <li key={index}>{step}</li>
-                    ))}
-                  </ul>
-                </div> */}
                 <button
                   className="w-full bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
                   onClick={closeModal}
                 >
-                  Close
+                  {t.close}
                 </button>
               </motion.div>
             </motion.div>

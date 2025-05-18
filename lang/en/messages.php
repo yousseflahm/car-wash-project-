@@ -244,7 +244,7 @@ return [
      "adminFeature3" => "Security",
      "adminFeature3Sub" => "Protected Access",
 
-    // Form Fields
+    // Form Fields 
      "adminEmail" => "Email",
      "adminEmailPlaceholder" => "Enter your email",
      "adminPassword" => "Password",
@@ -254,9 +254,33 @@ return [
 
    // Buttons & Links
      "adminLoginButton" => "Log in",
-     "adminLoggingIn" => "Logging in..."
+     "adminLoggingIn" => "Logging in..." , 
+
+   //  client layout 
+    "dashboard" => "Dashboard" ,
+    "reservation" => "My Reservations",
+    "mangeCars" => "Manage Cars",
+    "leaveReview" => "Leave a Review",
+    "reservationInvoice" => "Reservation Invoice",
+    "settings" => "Settings",
+    "yourProfile" => "Your Profile",
+    "logout" => "Logout",  
 
 
+    // Dashboard Page
+    "dashboardWelcome" => "Welcome",
+    "dashboardSubtitle" => "Here are your bookings and available services.",
+    "yourBookings" => "Your Bookings",
+    "noBookings" => "You don't have any bookings yet.",
+    "allServices" => "All Services",
+    "addCar" => "Add Car",
+    "bookNow" => "Book Now",
+    "details" => "Details",
+    "close" => "Close",
+    "status" => "Status",
+    "services" => "Services",
+    "price" => "Price"
+    
 
 
 

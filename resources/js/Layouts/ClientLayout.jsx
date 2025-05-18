@@ -26,7 +26,10 @@ export default function ClientAthentificatedLayout({ children }) {
     // Get the notifications from the page props
     const initialNotifications = usePage().props.notifications || [];
     const [notifications, setNotifications] = useState(initialNotifications);
-    console.log(notifications);
+
+    const{translations} = usePage().props;
+    const t  = translations.messages;
+   
 
     //  State for the sidebar
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -34,20 +37,20 @@ export default function ClientAthentificatedLayout({ children }) {
     const currentPath = usePage().url;
     // Navigation links
     const navigationItems = [
-        { name: "Dashboard", href: route("dashboard"), icon: GiHomeGarage },
+        { name: t.dashboard , href: route("dashboard"), icon: GiHomeGarage },
         {
-            name: "My Reservation",
+            name: t.reservation,
             href: route("BookingPage"),
             icon: BiCalendarCheck,
         },
-        { name: "Manage Cars", href: route("MangeCar"), icon: FaCarSide },
+        { name: t.mangeCars, href: route("MangeCar"), icon: FaCarSide },
         {
-            name: "Leave a Review",
+            name: t.leaveReview,
             href: route("ReviewPage"),
             icon: MdRateReview,
         },
         {
-            name: "Booking Invoice",
+            name: t.reservationInvoice,
             href: route("BookingInvoicePage"),
             icon: IoDocuments,
         },
@@ -62,11 +65,11 @@ export default function ClientAthentificatedLayout({ children }) {
     //   User navigation links
     const userNavigation = [
         {
-            name: "Your profile",
+            name: t.yourProfile,
             href: route("profile.edit"),
             methodType: "get",
         },
-        { name: "Sign out", href: route("logout"), methodType: "post" },
+        { name: t.logout, href: route("logout"), methodType: "post" },
     ];
     //   Function to add classes to the elements
     function classNames(...classes) {
@@ -214,7 +217,7 @@ export default function ClientAthentificatedLayout({ children }) {
                                                             className="h-6 w-6 shrink-0"
                                                             aria-hidden="true"
                                                         />
-                                                        Settings
+                                                        {t.settings}
                                                     </a>
                                                 </li>
                                             </ul>
@@ -274,7 +277,7 @@ export default function ClientAthentificatedLayout({ children }) {
                                             className="h-6 w-6 shrink-0"
                                             aria-hidden="true"
                                         />
-                                        Settings
+                                       {t.settings}
                                     </a>
                                 </li>
                             </ul>
