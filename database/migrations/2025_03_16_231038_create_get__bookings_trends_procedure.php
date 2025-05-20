@@ -24,7 +24,6 @@ return new class extends Migration
                GROUP BY DATE_FORMAT(created_at, '%Y-%m') -- Group by created_at
                ORDER BY month;
            END 
-        
         ");
     }
 
