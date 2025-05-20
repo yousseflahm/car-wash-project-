@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up()
     {
-        // Trigger 1: Booking Status Update (Client Notification)
+       
         DB::statement('
         CREATE TRIGGER after_booking_status_update
         AFTER UPDATE ON bookings
@@ -32,7 +32,7 @@ return new class extends Migration
         END
     ');
 
-        // Trigger 2: Booking Assigned to Washer (Washer Notification)
+        
         DB::statement('
             CREATE TRIGGER after_booking_assigned
             AFTER UPDATE ON bookings

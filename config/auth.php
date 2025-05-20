@@ -81,10 +81,7 @@ return [
             'model' => App\Models\Washer::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+     
     ],
 
     /*
