@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment , useState  } from "react";
 import { Link, usePage, useForm, Head } from "@inertiajs/react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 // icons from the heroicons/react
@@ -26,7 +26,8 @@ export default function ClientAthentificatedLayout({ children }) {
     // Get the notifications from the page props
     const initialNotifications = usePage().props.notifications || [];
     const [notifications, setNotifications] = useState(initialNotifications);
-
+    
+    // translations
     const{translations} = usePage().props;
     const t  = translations.messages;
    
