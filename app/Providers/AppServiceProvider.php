@@ -34,12 +34,12 @@ class AppServiceProvider extends ServiceProvider
        
         Inertia::share([
             'translations' => function () {
-                // Get current locale
+               
                 $locale = App::getLocale();
                 
-                // Load translations for current locale
+               
                 return [
-                    'messages' => trans('messages'), // Automatically uses current locale
+                    'messages' => trans('messages'), 
                     'locale' => $locale
                 ];
             }
