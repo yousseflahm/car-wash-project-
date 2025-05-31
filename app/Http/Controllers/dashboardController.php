@@ -17,8 +17,9 @@ class dashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $bookings = Booking::where('user_id', $user->id)->with(['car', 'services'])->get();
 
+        $bookings = Booking::where('user_id', $user->id)->with(['car', 'services'])->get();
+        
         $services = Service::all();
         
         return Inertia::render('Profile/Dashboard', [
