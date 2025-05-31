@@ -13,30 +13,29 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
-       // Call the procedure to get total revenue
+       // call procedure to get total revenue 
         $totalRevenueResult = DB::select('call getTotalRevenue()');
        
         $totalRevenue = $totalRevenueResult[0]->TotalRevenue  ?? 0;
-        
 
-        // Call the procedure to get today's revenue
+        // get today revenue 
         $todayRevenueResult = DB::select('call get_today_revenue()');
      
         $todayRevenue = $todayRevenueResult[0]->TodayRevenue ?? 0;
          
-        //  Get the total number of users
+        //  total users (client )
         $totalClients = User::count();
   
-        // Get the number of users who registered last month
+        //  get last month users
         $lastMonthClients = User::whereBetween('created_at', [
-            Carbon::now()->subMonth()->startOfMonth(),  // Start of last month
-            Carbon::now()->subMonth()->endOfMonth(),    // End of last month
+            Carbon::now()->subMonth()->startOfMonth(),  // start of last month
+            Carbon::now()->subMonth()->endOfMonth(),    // end of last month 
         ])->count();
 
-        // Calculate the percentage of users who registered last month
+        // for calculate number of the precentage  
         $percentageSubscriptionFromLastMonth = ($totalClients > 0) ? ($lastMonthClients / $totalClients) * 100 : 0;
 
-        // Get the top 5 users with the most bookings
+        // get 5 users that has 3 or more booking completed
         $topUsers = User::whereHas('bookings', function ($query) {
             $query->where('status', 'completed');
         })
@@ -48,7 +47,7 @@ class AdminDashboardController extends Controller
         ->limit(5)
         ->get();
 
-        // Get the top 5 services with the most bookings
+        // getting to 5 services used by clients
         $topServices = Service::withCount(['bookings as total_bookings' => function ($query) {
             $query->where('status', 'completed');
         }])
