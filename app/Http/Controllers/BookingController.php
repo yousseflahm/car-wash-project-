@@ -137,25 +137,25 @@ class BookingController extends Controller
             'bookings' => $bookings->map(function ($booking) {
                 return [
                     'id_booking' => $booking->id,
-                    'user' => $booking->user ? $booking->user->name : 'N/A', // User name from users table
-                    'car' => $booking->car ? $booking->car->brand . ' ' . $booking->car->model : 'N/A', // Car brand and model from cars table
+                    'user' => $booking->user ? $booking->user->name : 'N/A', 
+                    'car' => $booking->car ? $booking->car->brand . ' ' . $booking->car->model : 'N/A', 
                     'washer_id' => $booking->washer_id,
                     'status' => $booking->status,
                     'date' => $booking->date,
                     'total_price' => $booking->total_price,
                     'services' => $booking->services->map(function ($service) {
                         return [
-                            'id' => $service->id, // Service ID
-                            'name' => $service->name, // Service name
-                            'description' => $service->description, // Service description
-                            'price' => $service->price, // Service price
+                            'id' => $service->id, 
+                            'name' => $service->name, 
+                            'description' => $service->description, 
+                            'price' => $service->price, 
                         ];
                     }),
                 ];
             }),
-            'cars' => Car::all(), // All cars for dropdown (if needed)
-            'services' => Service::all(), // All services for dropdown (if needed)
-            'washers' => $approvedWashers, // Approved washers for dropdown
+            'cars' => Car::all(), 
+            'services' => Service::all(), 
+            'washers' => $approvedWashers, 
         ]);
     }
 
