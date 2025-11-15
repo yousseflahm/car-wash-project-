@@ -9,7 +9,7 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "@/components/ui/Card.jsx";
+} from "@/Components/ui/Card";
 
 export default function Dashboard({ auth, bookings, services }) {
   const [selectedService, setSelectedService] = useState(null);
