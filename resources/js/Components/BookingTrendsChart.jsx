@@ -12,7 +12,7 @@ import {
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
-} from "@/components/ui/chart";
+} from "@/Components/ui/chart";
 import { usePage } from "@inertiajs/react";
 
 export default function BookingTrendsChart({ bookingTrends }) {
