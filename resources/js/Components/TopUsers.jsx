@@ -12,7 +12,7 @@ import {
     TableHead,
     TableBody,
     TableCell,
-} from "@/components/ui/table";
+} from "@/Components/ui/table";
 import { usePage } from "@inertiajs/react";
 
 export default function TopUsers({ topUsers }) {
