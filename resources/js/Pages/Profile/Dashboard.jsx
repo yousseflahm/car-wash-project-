@@ -9,7 +9,7 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "/resources/js/Components/ui/Card.jsx";
+} from "/resources/js/Components/ui/card";
 
 
 export default function Dashboard({ auth, bookings, services }) {

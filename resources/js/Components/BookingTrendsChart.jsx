@@ -7,7 +7,7 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card";
+} from "@/Components/ui/card";
 import {
     ChartContainer,
     ChartTooltip,
@@ -21,8 +21,8 @@ export default function BookingTrendsChart({ bookingTrends }) {
         month: item.month,
         bookings: item.bookings,
     }));
-    const {translations} = usePage().props;
-    const t = translations.messages
+    const { translations } = usePage().props;
+    const t = translations.messages;
     const chartConfig = {
         bookings: {
             label: "Bookings",
@@ -34,16 +34,13 @@ export default function BookingTrendsChart({ bookingTrends }) {
         <Card>
             <CardHeader>
                 <CardTitle>{t.BookingTrends}</CardTitle>
-                <CardDescription>
-                    {t.trendsText}
-                </CardDescription>
+                <CardDescription>{t.trendsText}</CardDescription>
             </CardHeader>
             <CardContent>
                 <ChartContainer config={chartConfig}>
                     <AreaChart
                         accessibilityLayer
                         data={chartData}
-                       
                         margin={{
                             left: 12,
                             right: 12,
@@ -55,7 +52,7 @@ export default function BookingTrendsChart({ bookingTrends }) {
                             tickLine={false}
                             axisLine={false}
                             tickMargin={8}
-                            tickFormatter={(value) => value.slice(0, 7)} 
+                            tickFormatter={(value) => value.slice(0, 7)}
                         />
                         <ChartTooltip
                             cursor={false}

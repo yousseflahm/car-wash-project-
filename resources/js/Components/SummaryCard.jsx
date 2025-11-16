@@ -1,9 +1,4 @@
-import {
-    Card,
-    CardHeader,
-    CardContent,
-    CardTitle,
-} from "./ui/Card";
+import { Card, CardHeader, CardContent, CardTitle } from "./ui/card";
 
 export default function SummaryCard({ title, value, Icon, footerValue }) {
     return (
@@ -19,7 +14,8 @@ export default function SummaryCard({ title, value, Icon, footerValue }) {
                 </div>
                 {footerValue && (
                     <p className="text-xs text-muted-foreground">
-                        {footerValue > 0 ? "↑" : "↓"} {Math.abs(footerValue)} % from last month
+                        {footerValue > 0 ? "↑" : "↓"} {Math.abs(footerValue)} %
+                        from last month
                     </p>
                 )}
             </CardContent>
