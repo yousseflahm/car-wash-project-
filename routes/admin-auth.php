@@ -4,7 +4,7 @@ use App\Http\Controllers\admin\Auth\LoginController;
 
 use App\Http\Controllers\admin\Auth\RegisteredController;
 use App\Http\Middleware\AdminAuth;
-use App\Http\Controllers\bookingController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\WasherController;
