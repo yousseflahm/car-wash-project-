@@ -41,6 +41,9 @@ export default function Dashboard({
             footerValue: 17.22 || "",
         },
     ];
+    console.log(SummaryData)
+
+    
 
 
     const fakeBookingTrends = [
@@ -57,13 +60,20 @@ export default function Dashboard({
             <Head title="Dashboard" />
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {SummaryData.map((item) => (
+                   
                     <SummaryCard
+                        
                         key={item.title}
                         title={item.title}
                         value={item.value}
+                        
                         Icon={item.icon}
                         footerValue={item.footerValue}
                     />
+
+ 
+                  
+                   
                 ))}
             </div>
             <div className="mt-6    grid gap-4 md:grid-cols-2 lg:grid-cols-2">
