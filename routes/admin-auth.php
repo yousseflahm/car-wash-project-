@@ -30,7 +30,7 @@ Route::prefix('admin')->middleware( 'auth:admin' ,  AdminAuth::class)->group(fun
     Route::post('logout', [LoginController::class, 'destroy'])->name('admin.logout');
 
     // booking handling routes
-    Route::get('reservation' , [bookingController::class , 'getAllBookingAdmin'])->name('admin.reservation');
+    Route::get('reservation' , [BookingController::class , 'getAllBookingAdmin'])->name('admin.reservation');
     Route::put('bookings/{id}/assign-washer', [BookingController::class, 'assignWasher'])->name('admin.addWasherToBooking');
 
     // washers handling routes  
