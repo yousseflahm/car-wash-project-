@@ -20,7 +20,8 @@ class AdminDashboardController extends Controller
         $totalRevenue = DB::table('bookings')
           ->where('status', 'completed')
           ->whereDate('created_at', Carbon::today())
-          ->sum('price');
+          ->sum('total_price');
+        //   dd( $totalRevenue) ;
     
         // Today revenue
         // $todayRevenueResult = DB::select('call get_today_revenue()');
