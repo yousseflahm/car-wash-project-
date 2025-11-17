@@ -14,12 +14,24 @@ class AdminDashboardController extends Controller
     public function index()
     {
         // Total revenue
-        $totalRevenueResult = DB::select('call getTotalRevenue()');
-        $totalRevenue = $totalRevenueResult[0]->TotalRevenue ?? 0;
+        // $totalRevenueResult = DB::select('call getTotalRevenue()');
+        // $totalRevenue = $totalRevenueResult[0]->TotalRevenue ?? 0;
+
+        $totalRevenue = DB::table('bookings')
+          ->where('status', 'completed')
+          ->whereDate('created_at', Carbon::today())
+          ->sum('price');
     
         // Today revenue
-        $todayRevenueResult = DB::select('call get_today_revenue()');
-        $todayRevenue = $todayRevenueResult[0]->TodayRevenue ?? 0;
+        // $todayRevenueResult = DB::select('call get_today_revenue()');
+        // $todayRevenue = $todayRevenueResult[0]->TodayRevenue ?? 0;
+
+        $todayRevenue = DB::table('bookings')
+          ->selectRaw('MONTH(created_at) as month, COUNT(*) as bookings')
+          ->groupByRaw('MONTH(created_at)')
+          ->orderByRaw('MONTH(created_at)')
+          ->get()
+          ->toArray();
     
         // Total clients
         $totalClients = User::count();
